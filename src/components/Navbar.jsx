@@ -71,7 +71,7 @@ const Navbar = () => {
             <div className="w-12 h-12 bg-brand-lightBlue text-white flex items-center justify-center font-bold text-xl rounded shadow-lg">
               PA
             </div>
-            <span className="ml-3 font-bold text-2xl tracking-tight text-brand-blue">PANUM AD</span>
+            <span className="ml-3 font-bold text-2xl tracking-tight text-brand-blue">PANUM AD STRUCTURES</span>
           </Link>
 
           {/* Desktop Links */}
