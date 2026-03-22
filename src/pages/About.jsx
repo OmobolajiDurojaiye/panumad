@@ -107,7 +107,7 @@ const About = () => {
           </div>
           <div className="md:w-2/3">
             <h2 className="text-3xl font-bold text-brand-blue mb-2">MESSAGE FROM THE MD/CEO</h2>
-            <h4 className="text-brand-lightBlue font-semibold mb-6">Engr. (Dr.) Oludare</h4>
+            <h4 className="text-brand-lightBlue font-semibold mb-6">Engr. Eric Eliezer</h4>
             <div className="space-y-4 text-gray-600 italic">
               <p>
                 "Welcome to Panum Ad Estates. When we started this journey, our goal was simple: to eradicate the housing deficit in Nigeria by providing homes that aren't just structurally sound, but are sanctuaries for the families that live in them.
