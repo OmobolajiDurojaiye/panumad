@@ -1,129 +1,217 @@
 // src/components/Navbar.jsx
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Phone, Mail, Facebook, Twitter, Instagram, Menu, ChevronLeft, ChevronRight } from 'lucide-react';
+import { 
+  Phone, 
+  Mail, 
+  Facebook, 
+  Twitter, 
+  Instagram, 
+  Menu, 
+  ChevronLeft, 
+  ChevronRight,
+  HardHat
+} from 'lucide-react';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
-  const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+  // Toggle mobile menu visibility
+  const toggleMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+    // Prevent body scroll when menu is open
+    if (!isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  };
 
-  // Scroll listener for the sticky dark navbar
+  // Scroll listener to trigger the sticky dark navbar
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 150);
+      if (window.scrollY > 150) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Helper component for mobile links
-  const MobileNavLink = ({ to, children }) => (
-    <Link 
-      to={to} 
-      onClick={toggleMenu}
-      className="flex items-center justify-between p-4 border-b border-gray-200 text-gray-600 hover:bg-gray-50 transition"
-    >
-      <span className="text-sm font-light tracking-wide">{children}</span>
-      <ChevronRight size={16} className="text-gray-400" />
-    </Link>
-  );
+  // Shared navigation links to ensure consistency
+  const navLinks = [
+    { name: 'HOME', path: '/' },
+    { name: 'ABOUT US', path: '/about' },
+    { name: 'OUR PROJECTS', path: '/projects' },
+    { name: 'GALLERY', path: '/gallery' },
+    { name: 'CONTACT', path: '/contact' },
+  ];
 
   return (
     <>
-      {/* 1. THE SLIDING COMPACT DARK NAVBAR (Visible only on scroll) */}
+      {/* 1. THE STICKY NAVBAR (Appears on Scroll - Dark & Sleek) */}
       <div 
-        className={`fixed top-0 left-0 w-full z-[70] bg-[#0a0f18] border-b border-gray-800 transition-transform duration-300 ease-in-out hidden md:flex items-center justify-center ${
-          isScrolled ? 'translate-y-0 shadow-xl' : '-translate-y-full'
+        className={`fixed top-0 left-0 w-full z-[70] bg-[#0a0f18]/95 backdrop-blur-md border-b border-gray-800 transition-all duration-500 ease-in-out hidden md:block ${
+          isScrolled ? 'translate-y-0 opacity-100 shadow-2xl' : '-translate-y-full opacity-0'
         }`}
       >
-        <nav className="flex items-center text-xs font-semibold text-gray-400 uppercase tracking-widest">
-          <Link to="/about" className="px-6 py-4 hover:text-white transition border-r border-gray-800">ABOUT US</Link>
-          <Link to="/projects" className="px-6 py-4 hover:text-white transition border-r border-gray-800">OUR PROJECTS</Link>
-          <Link to="/contact" className="px-6 py-4 hover:text-white transition border-r border-gray-800">PANUM WORKSHOP</Link>
-          <Link to="/projects" className="px-6 py-4 hover:text-white transition border-r border-gray-800">EPS TECHNOLOGY</Link>
-          <Link to="/gallery" className="px-6 py-4 hover:text-white transition border-r border-gray-800">GALLERY</Link>
-          <Link to="/" className="px-6 py-4 hover:text-white transition">TRENDING NEWS/BLOG</Link>
-        </nav>
+        <div className="max-w-7xl mx-auto px-10 flex justify-between items-center py-3">
+          {/* Compact Logo for Sticky Nav */}
+          <Link to="/" className="flex items-center group">
+            <div className="w-10 h-10 bg-brand-lightBlue text-white flex items-center justify-center font-bold text-lg rounded transform group-hover:rotate-12 transition-transform">
+              PA
+            </div>
+            <span className="ml-3 font-bold text-lg text-white tracking-tight uppercase">Panum Ad <span className="text-brand-lightBlue font-light">Structures</span></span>
+          </Link>
+
+          {/* Nav Links */}
+          <nav className="flex space-x-8">
+            {navLinks.map((link) => (
+              <Link 
+                key={link.name} 
+                to={link.path} 
+                className={`text-[11px] font-bold tracking-[0.2em] transition-colors duration-300 ${
+                  location.pathname === link.path ? 'text-brand-lightBlue' : 'text-gray-400 hover:text-white'
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </nav>
+
+          {/* Compact Button */}
+          <Link 
+            to="/contact" 
+            className="bg-brand-blue text-white px-5 py-2 text-[10px] font-bold tracking-widest hover:bg-brand-lightBlue transition-all duration-300 uppercase shadow-lg shadow-blue-900/20"
+          >
+            TALK TO US
+          </Link>
+        </div>
       </div>
 
-      {/* 2. THE MAIN STATIC NAVBAR */}
-      <header className="w-full relative z-50 shadow-md bg-white">
-        {/* Top Bar */}
-        <div className="bg-black text-white text-xs py-2 px-4 md:px-10 flex flex-col md:flex-row justify-between items-center">
-          <div className="flex items-center space-x-4">
-            <span className="flex items-center"><Phone size={14} className="mr-1"/> 08033143867</span>
-            <span className="flex items-center"><Mail size={14} className="mr-1"/> info@panumad.com</span>
+      {/* 2. THE MAIN STATIC NAVBAR (Standard View) */}
+      <header className="w-full relative z-50 bg-white">
+        {/* Top Info Bar (Black) */}
+        <div className="bg-black text-white text-[10px] md:text-xs py-2.5 px-4 md:px-10 flex flex-col md:flex-row justify-between items-center tracking-wider">
+          <div className="flex items-center space-x-6">
+            <span className="flex items-center hover:text-brand-lightBlue transition cursor-default">
+              <Phone size={14} className="mr-2 text-brand-lightBlue" /> 08033143867, 02092902691
+            </span>
+            <span className="flex items-center hover:text-brand-lightBlue transition cursor-default">
+              <Mail size={14} className="mr-2 text-brand-lightBlue" /> info@panumad.com
+            </span>
           </div>
-          <div className="flex space-x-3 mt-2 md:mt-0">
-            <Facebook size={16} className="hover:text-brand-lightBlue cursor-pointer" />
-            <Twitter size={16} className="hover:text-brand-lightBlue cursor-pointer" />
-            <Instagram size={16} className="hover:text-brand-lightBlue cursor-pointer" />
+          <div className="flex items-center space-x-5 mt-2 md:mt-0 opacity-60">
+            <span className="mr-2 font-bold text-[9px] uppercase hidden lg:inline">Follow Our Engineering Journey:</span>
+            <Facebook size={16} className="hover:text-brand-lightBlue cursor-pointer transition" />
+            <Twitter size={16} className="hover:text-brand-lightBlue cursor-pointer transition" />
+            <Instagram size={16} className="hover:text-brand-lightBlue cursor-pointer transition" />
           </div>
         </div>
 
-        {/* Main Nav */}
-        <div className="flex justify-between items-center px-4 md:px-10 py-4">
-          {/* Logo Placeholder */}
-          <Link to="/" className="flex items-center">
-            <div className="w-12 h-12 bg-brand-lightBlue text-white flex items-center justify-center font-bold text-xl rounded shadow-lg">
+        {/* Main Brand & Nav Row (White) */}
+        <div className="flex justify-between items-center px-4 md:px-10 py-6 border-b border-gray-100 shadow-sm">
+          {/* Main Logo */}
+          <Link to="/" className="flex items-center group">
+            <div className="w-14 h-14 bg-brand-lightBlue text-white flex items-center justify-center font-black text-2xl rounded-sm shadow-xl transform group-hover:-translate-y-1 transition-transform duration-300">
               PA
             </div>
-            <span className="ml-3 font-bold text-2xl tracking-tight text-brand-blue">PANUM AD STRUCTURES</span>
+            <div className="ml-4">
+              <span className="block font-black text-2xl md:text-3xl tracking-tighter text-brand-blue leading-none">PANUM AD STRUCTURES</span>
+              <span className="text-[10px] font-bold tracking-[0.3em] text-gray-400 uppercase leading-none mt-1 flex items-center">
+                <HardHat size={10} className="mr-1 text-brand-lightBlue" /> Construction & Engineering
+              </span>
+            </div>
           </Link>
 
-          {/* Desktop Links */}
-          <nav className="hidden md:flex space-x-6 text-sm font-semibold text-gray-700">
-            <Link to="/" className={`hover:text-brand-lightBlue transition ${location.pathname === '/' ? 'text-brand-lightBlue' : ''}`}>HOME</Link>
-            <Link to="/about" className={`hover:text-brand-lightBlue transition ${location.pathname === '/about' ? 'text-brand-lightBlue' : ''}`}>ABOUT US</Link>
-            <Link to="/projects" className={`hover:text-brand-lightBlue transition ${location.pathname === '/projects' ? 'text-brand-lightBlue' : ''}`}>OUR PROJECTS</Link>
-            <Link to="/gallery" className={`hover:text-brand-lightBlue transition ${location.pathname === '/gallery' ? 'text-brand-lightBlue' : ''}`}>GALLERY</Link>
-            <Link to="/contact" className={`hover:text-brand-lightBlue transition ${location.pathname === '/contact' ? 'text-brand-lightBlue' : ''}`}>CONTACT</Link>
+          {/* Desktop Links with Active Indicators */}
+          <nav className="hidden lg:flex space-x-10">
+            {navLinks.map((link) => (
+              <Link 
+                key={link.name} 
+                to={link.path} 
+                className={`relative py-2 text-[12px] font-black tracking-widest transition-all duration-300 hover:text-brand-lightBlue group ${
+                  location.pathname === link.path ? 'text-brand-lightBlue' : 'text-gray-700'
+                }`}
+              >
+                {link.name}
+                {/* Active Underline Effect */}
+                <span className={`absolute bottom-0 left-0 h-0.5 bg-brand-lightBlue transition-all duration-300 ${
+                  location.pathname === link.path ? 'w-full' : 'w-0 group-hover:w-full'
+                }`}></span>
+              </Link>
+            ))}
           </nav>
 
-          {/* Talk to Us Button (Desktop) */}
-          <div className="hidden md:block">
-            <Link to="/contact" className="bg-brand-blue text-white px-6 py-3 font-bold hover:bg-brand-lightBlue transition">
+          {/* Contact Button */}
+          <div className="hidden lg:block">
+            <Link 
+              to="/contact" 
+              className="bg-brand-blue text-white px-10 py-4 font-black text-xs tracking-[0.2em] hover:bg-brand-lightBlue transition-all duration-500 shadow-xl shadow-blue-900/10 uppercase"
+            >
               TALK TO US
             </Link>
           </div>
 
-          {/* Mobile Menu Hamburger Icon */}
-          <button onClick={toggleMenu} className="md:hidden text-gray-800 focus:outline-none">
-            <Menu size={28} />
+          {/* Mobile Menu Toggle Button */}
+          <button 
+            onClick={toggleMenu} 
+            className="lg:hidden p-2 text-brand-blue focus:outline-none"
+            aria-label="Toggle Menu"
+          >
+            <Menu size={32} />
           </button>
         </div>
 
-        {/* Mobile Menu Full-Screen Overlay */}
+        {/* 3. MOBILE MENU OVERLAY (Screenshot 6 Slide-in Style) */}
         <div 
-          className={`fixed inset-0 bg-white z-[80] transform ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out md:hidden flex flex-col`}
+          className={`fixed inset-0 bg-white z-[90] transform transition-transform duration-500 ease-in-out lg:hidden flex flex-col ${
+            isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
         >
-          {/* Mobile Menu Header - "Back" */}
-          <div className="flex items-center justify-center p-4 border-b border-gray-200 relative bg-white">
-            <button onClick={toggleMenu} className="absolute left-4 text-gray-500 p-1">
-              <ChevronLeft size={20} />
+          {/* Mobile Header */}
+          <div className="flex items-center justify-center p-6 border-b border-gray-100 relative bg-gray-50">
+            <button 
+              onClick={toggleMenu} 
+              className="absolute left-6 text-gray-500 p-2 hover:bg-white rounded-full transition shadow-sm"
+            >
+              <ChevronLeft size={24} />
             </button>
-            <span className="text-gray-400 text-sm font-light">Back</span>
+            <span className="text-gray-400 text-xs font-bold tracking-[0.3em] uppercase">Back</span>
           </div>
 
-          {/* Mobile Menu Links */}
+          {/* Mobile Nav Links */}
           <div className="flex flex-col w-full bg-white overflow-y-auto">
-            <MobileNavLink to="/">HOME</MobileNavLink>
-            <MobileNavLink to="/about">ABOUT US</MobileNavLink>
-            <MobileNavLink to="/projects">OUR PROJECTS</MobileNavLink>
-            <MobileNavLink to="/gallery">GALLERY</MobileNavLink>
-            <MobileNavLink to="/contact">CONTACT</MobileNavLink>
+            {navLinks.map((link) => (
+              <Link 
+                key={link.name} 
+                to={link.path} 
+                onClick={toggleMenu}
+                className={`flex items-center justify-between p-6 border-b border-gray-50 transition-all duration-300 ${
+                  location.pathname === link.path ? 'bg-blue-50/50 text-brand-lightBlue' : 'text-gray-600 hover:bg-gray-50'
+                }`}
+              >
+                <span className="text-sm font-bold tracking-[0.2em]">{link.name}</span>
+                <ChevronRight size={18} className={`${location.pathname === link.path ? 'text-brand-lightBlue' : 'text-gray-300'}`} />
+              </Link>
+            ))}
             
-            <div className="p-4 mt-4">
+            {/* Mobile Contact Action */}
+            <div className="p-8 mt-10">
                <Link 
                  to="/contact" 
                  onClick={toggleMenu}
-                 className="block w-full text-center bg-brand-blue text-white py-3 font-semibold rounded shadow"
+                 className="block w-full text-center bg-brand-blue text-white py-4 font-black tracking-[0.2em] text-sm shadow-2xl shadow-blue-900/30 uppercase"
                >
                   TALK TO US
                </Link>
+               <div className="mt-10 flex justify-center space-x-8 opacity-40">
+                  <Facebook size={20} /><Twitter size={20} /><Instagram size={20} />
+               </div>
             </div>
           </div>
         </div>
