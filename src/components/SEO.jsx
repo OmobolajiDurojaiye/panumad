@@ -8,7 +8,7 @@ const seoImage = image || defaultImage;
 return (
 <Helmet>
     { /* Standard metadata tags */ }
-    <title>{title} | Panum A.D. Structures</title>
+    <title>{`${title} | Panum A.D. Structures`}</title>
     <meta name='description' content={description} />
     <meta name="keywords" content="Construction company Abuja, Building contractors Nigeria, Civil Engineering Nigeria, EPS Building Technology, Affordable housing construction, Panum Ad" />
     
