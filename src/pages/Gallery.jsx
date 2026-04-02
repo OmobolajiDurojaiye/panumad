@@ -1,6 +1,7 @@
 // src/pages/Gallery.jsx
 import { useState } from 'react';
 import { ZoomIn, X } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const Gallery = () => {
   // State for filtering images
@@ -10,15 +11,15 @@ const Gallery = () => {
 
   // Gallery Data
   const images = [
-    { id: 1, category: 'Residential', title: 'Mount Pleasant Estate Phase 1', src: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1000' },
-    { id: 2, category: 'Construction', title: 'EPS Technology Implementation', src: 'https://images.unsplash.com/photo-1541888086425-d81bb19240f5?auto=format&fit=crop&q=80&w=1000' },
-    { id: 3, category: 'Commercial', title: 'Abuja Central Mall', src: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000' },
-    { id: 4, category: 'Residential', title: 'Panum Ad Villas', src: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1000' },
-    { id: 5, category: 'Interior', title: 'Luxury 4-Bedroom Duplex', src: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=1000' },
-    { id: 6, category: 'Construction', title: 'Foundation Laying Ceremony', src: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=1000' },
-    { id: 7, category: 'Residential', title: 'Polystyrene City Terraces', src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1000' },
-    { id: 8, category: 'Interior', title: 'Modern Kitchen Finishing', src: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80&w=1000' },
-    { id: 9, category: 'Commercial', title: 'Office Complex Block B', src: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1000' },
+    { id: 1, category: 'Residential', title: 'Site Operations', src: '/project-images/1 (1).jpeg' },
+    { id: 2, category: 'Construction', title: 'Early Stage Development', src: '/project-images/1 (2).jpeg' },
+    { id: 3, category: 'Commercial', title: 'Level 2 Structural Works', src: '/project-images/1 (3).jpeg' },
+    { id: 4, category: 'Residential', title: 'Ground Works', src: '/project-images/1 (4).jpeg' },
+    { id: 5, category: 'Interior', title: 'Foundation Pillars', src: '/project-images/1 (5).jpeg' },
+    { id: 6, category: 'Construction', title: 'Trenching Strategy', src: '/project-images/1 (6).jpeg' },
+    { id: 7, category: 'Residential', title: 'Base Infrastructure', src: '/project-images/1 (7).jpeg' },
+    { id: 8, category: 'Interior', title: 'Material Check', src: '/project-images/1 (8).jpeg' },
+    { id: 9, category: 'Commercial', title: 'Formwork Application', src: '/project-images/1 (9).jpeg' },
   ];
 
   // Filter logic
@@ -27,6 +28,7 @@ const Gallery = () => {
 
   return (
     <div className="w-full overflow-x-hidden min-h-screen bg-gray-50 pb-20">
+      <SEO title="Gallery" description="View images of our construction progress, foundation works, and completed structural engineering projects." />
       
       {/* 1. Page Hero Section */}
       <section className="relative h-[30vh] md:h-[40vh] w-full bg-brand-dark text-white flex items-center justify-center">

@@ -25,20 +25,20 @@ const Footer = () => {
         <div className="md:col-span-2">
           <h3 className="font-bold mb-4 text-lg">GET IN TOUCH</h3>
           <p className="flex items-center text-gray-400 mb-2">
-            <Phone size={16} className="mr-2"/> 08033143867, 02092902691
+            <Phone size={16} className="mr-2"/> 08029617972
           </p>
           <p className="flex items-center text-gray-400 mb-2">
-            <Mail size={16} className="mr-2"/> info@panumad.com
+            <Mail size={16} className="mr-2"/> panumadstruct@gmail.com
           </p>
           <p className="flex items-start text-gray-400 mb-4">
             <MapPin size={16} className="mr-2 mt-1 flex-shrink-0"/>
-            PANUM AD Estates, Airport Road By Pass, Abuja, Nigeria.
+            Abuja, FCT, Nigeria.
           </p>
         </div>
       </div>
       
       <div className="max-w-7xl mx-auto border-t border-brand-blue mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-400">
-        <p>© 2026 Panum Ad Estates Ltd. All rights reserved.</p>
+        <p>© 2026 Panum A.D. Structures. All rights reserved.</p>
         <div className="flex space-x-4 mt-4 md:mt-0 items-center">
           <span>GET SOCIAL</span>
           <Facebook className="hover:text-white cursor-pointer" size={20} />

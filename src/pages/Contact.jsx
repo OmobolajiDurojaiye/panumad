@@ -1,9 +1,41 @@
-// src/pages/Contact.jsx
+import { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Send, MessageSquare } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const Contact = () => {
+  const [formStatus, setFormStatus] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setFormStatus('Sending...');
+
+    const formData = new FormData(e.target);
+    // TODO: Replace with your actual Web3Forms access key
+    formData.append("access_key", "YOUR_WEB3FORMS_ACCESS_KEY_HERE");
+    
+    // Send email to client
+    formData.append("subject", `New Website Inquiry from ${formData.get('name') || 'Guest'}`);
+    formData.append("from_name", "Panum A.D. Website");
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      }).then((res) => res.json());
+
+      if (res.success) {
+        setFormStatus('Message sent successfully! We will get back to you soon.');
+        e.target.reset();
+      } else {
+        setFormStatus('Failed to send. Please ensure your access key is correct.');
+      }
+    } catch (error) {
+      setFormStatus('An error occurred. Please try again later.');
+    }
+  };
   return (
     <div className="w-full overflow-x-hidden bg-gray-50">
+      <SEO title="Contact Us" description="Get in touch with Panum A.D. Structures for structural engineering, residential construction, and renovation inquiries in Abuja." />
       
       {/* 1. Page Hero Section */}
       <section className="relative h-[30vh] md:h-[40vh] w-full bg-brand-blue text-white flex items-center justify-center">
@@ -38,9 +70,8 @@ const Contact = () => {
                 <div>
                   <h4 className="font-bold text-gray-800 mb-1">Head Office</h4>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    PANUM AD ESTATES<br />
-                    Jabi-Airport Road By Pass,<br />
-                    Nbora District, Abuja, Nigeria.
+                    PANUM A.D. STRUCTURES<br />
+                    Abuja, FCT, Nigeria.
                   </p>
                 </div>
               </div>
@@ -53,8 +84,7 @@ const Contact = () => {
                 <div>
                   <h4 className="font-bold text-gray-800 mb-1">Phone Numbers</h4>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    08033143867, 02092902691<br />
-                    08056284206, 08035880393
+                    08029617972
                   </p>
                 </div>
               </div>
@@ -66,7 +96,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-gray-800 mb-1">Email Address</h4>
-                  <p className="text-gray-600 text-sm">info@panumad.com</p>
+                  <p className="text-gray-600 text-sm">panumadstruct@gmail.com</p>
                 </div>
               </div>
 
@@ -78,8 +108,8 @@ const Contact = () => {
                 <div>
                   <h4 className="font-bold text-gray-800 mb-1">Business Hours</h4>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    Monday - Friday: 8:00 AM - 5:00 PM<br />
-                    Saturday - Sunday: Closed
+                    Monday - Saturday: 8:00 AM - 6:00 PM<br />
+                    Sunday: By Appointment
                   </p>
                 </div>
               </div>
@@ -96,7 +126,7 @@ const Contact = () => {
               
               <h3 className="text-2xl font-bold text-gray-800 mb-6">Send Us a Message</h3>
               
-              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Name Input */}
                   <div>
@@ -104,6 +134,8 @@ const Contact = () => {
                     <input 
                       type="text" 
                       id="name" 
+                      name="name"
+                      required
                       className="w-full bg-gray-50 border border-gray-200 rounded px-4 py-3 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition"
                       placeholder="John Doe"
                     />
@@ -114,6 +146,8 @@ const Contact = () => {
                     <input 
                       type="tel" 
                       id="phone" 
+                      name="phone"
+                      required
                       className="w-full bg-gray-50 border border-gray-200 rounded px-4 py-3 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition"
                       placeholder="+234 800 000 0000"
                     />
@@ -126,6 +160,8 @@ const Contact = () => {
                   <input 
                     type="email" 
                     id="email" 
+                    name="email"
+                    required
                     className="w-full bg-gray-50 border border-gray-200 rounded px-4 py-3 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition"
                     placeholder="john@example.com"
                   />
@@ -136,13 +172,14 @@ const Contact = () => {
                   <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="subject">Subject / Project of Interest</label>
                   <select 
                     id="subject" 
+                    name="subject_of_interest"
                     className="w-full bg-gray-50 border border-gray-200 rounded px-4 py-3 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition text-gray-600"
                   >
-                    <option>General Inquiry</option>
-                    <option>Mount Pleasant Estate</option>
-                    <option>Panum Ad Villas</option>
-                    <option>Polystyrene City (EPS Tech)</option>
-                    <option>Partnership/Investment</option>
+                    <option value="General Inquiry">General Inquiry</option>
+                    <option value="Building Construction">Building Construction</option>
+                    <option value="Structural Design">Structural Design</option>
+                    <option value="Maintenance & Renovation">Maintenance & Renovation</option>
+                    <option value="Partnership/Investment">Partnership/Investment</option>
                   </select>
                 </div>
 
@@ -151,18 +188,28 @@ const Contact = () => {
                   <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="message">Your Message</label>
                   <textarea 
                     id="message" 
+                    name="message"
+                    required
                     rows="5" 
                     className="w-full bg-gray-50 border border-gray-200 rounded px-4 py-3 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition resize-none"
                     placeholder="How can we help you today?"
                   ></textarea>
                 </div>
 
+                {/* Form Status Message */}
+                {formStatus && (
+                  <div className={`p-4 rounded ${formStatus.includes('success') ? 'bg-green-50 text-green-700 border border-green-200' : formStatus === 'Sending...' ? 'bg-blue-50 text-brand-blue border border-blue-200' : 'bg-red-50 text-red-700 border border-red-200'}`}>
+                    <p className="font-semibold text-sm">{formStatus}</p>
+                  </div>
+                )}
+
                 {/* Submit Button */}
                 <button 
                   type="submit" 
-                  className="w-full bg-brand-blue text-white font-bold text-lg px-6 py-4 rounded hover:bg-brand-lightBlue transition shadow-lg flex items-center justify-center group"
+                  disabled={formStatus === 'Sending...'}
+                  className="w-full bg-brand-blue text-white font-bold text-lg px-6 py-4 rounded hover:bg-brand-lightBlue transition shadow-lg flex items-center justify-center group disabled:opacity-70"
                 >
-                  SEND MESSAGE 
+                  {formStatus === 'Sending...' ? 'SENDING...' : 'SEND MESSAGE'}
                   <Send size={20} className="ml-2 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </button>
               </form>

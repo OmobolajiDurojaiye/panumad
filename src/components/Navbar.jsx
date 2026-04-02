@@ -55,17 +55,19 @@ const Navbar = () => {
     <>
       {/* 1. THE STICKY NAVBAR (Appears on Scroll - Dark & Sleek) */}
       <div 
-        className={`fixed top-0 left-0 w-full z-[70] bg-[#0a0f18]/95 backdrop-blur-md border-b border-gray-800 transition-all duration-500 ease-in-out hidden md:block ${
+        className={`fixed top-0 left-0 w-full z-[70] bg-brand-dark/95 backdrop-blur-md border-b border-gray-800 transition-all duration-500 ease-in-out hidden md:block ${
           isScrolled ? 'translate-y-0 opacity-100 shadow-2xl' : '-translate-y-full opacity-0'
         }`}
       >
         <div className="max-w-7xl mx-auto px-10 flex justify-between items-center py-3">
           {/* Compact Logo for Sticky Nav */}
           <Link to="/" className="flex items-center group">
-            <div className="w-10 h-10 bg-brand-lightBlue text-white flex items-center justify-center font-bold text-lg rounded transform group-hover:rotate-12 transition-transform">
-              PA
-            </div>
-            <span className="ml-3 font-bold text-lg text-white tracking-tight uppercase">Panum Ad <span className="text-brand-lightBlue font-light">Structures</span></span>
+            <img 
+              src="/panumadlogo-white.png" 
+              alt="Panum Ad Logo" 
+              className="h-10 w-auto object-contain transform group-hover:rotate-12 transition-transform rounded-sm" 
+            />
+            <span className="ml-3 font-bold text-lg text-white tracking-tight uppercase">Panum A.D. <span className="text-brand-lightBlue font-light">Structures</span></span>
           </Link>
 
           {/* Nav Links */}
@@ -99,10 +101,10 @@ const Navbar = () => {
         <div className="bg-black text-white text-[10px] md:text-xs py-2.5 px-4 md:px-10 flex flex-col md:flex-row justify-between items-center tracking-wider">
           <div className="flex items-center space-x-6">
             <span className="flex items-center hover:text-brand-lightBlue transition cursor-default">
-              <Phone size={14} className="mr-2 text-brand-lightBlue" /> 08033143867, 02092902691
+              <Phone size={14} className="mr-2 text-brand-lightBlue" /> 08029617972
             </span>
             <span className="flex items-center hover:text-brand-lightBlue transition cursor-default">
-              <Mail size={14} className="mr-2 text-brand-lightBlue" /> info@panumad.com
+              <Mail size={14} className="mr-2 text-brand-lightBlue" /> panumadstruct@gmail.com
             </span>
           </div>
           <div className="flex items-center space-x-5 mt-2 md:mt-0 opacity-60">
@@ -117,11 +119,13 @@ const Navbar = () => {
         <div className="flex justify-between items-center px-4 md:px-10 py-6 border-b border-gray-100 shadow-sm">
           {/* Main Logo */}
           <Link to="/" className="flex items-center group">
-            <div className="w-14 h-14 bg-brand-lightBlue text-white flex items-center justify-center font-black text-2xl rounded-sm shadow-xl transform group-hover:-translate-y-1 transition-transform duration-300">
-              PA
-            </div>
+            <img 
+              src="/panumadlogo-white.png" 
+              alt="Panum Ad Logo" 
+              className="h-14 w-auto object-contain shadow-sm transform group-hover:-translate-y-1 transition-transform duration-300 rounded-sm" 
+            />
             <div className="ml-4">
-              <span className="block font-black text-2xl md:text-3xl tracking-tighter text-brand-blue leading-none">PANUM AD STRUCTURES</span>
+              <span className="block font-black text-2xl md:text-3xl tracking-tighter text-brand-blue leading-none">PANUM A.D. STRUCTURES</span>
               <span className="text-[10px] font-bold tracking-[0.3em] text-gray-400 uppercase leading-none mt-1 flex items-center">
                 <HardHat size={10} className="mr-1 text-brand-lightBlue" /> Construction & Engineering
               </span>

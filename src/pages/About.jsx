@@ -1,9 +1,11 @@
 // src/pages/About.jsx
 import { Target, Eye, ShieldCheck, HardHat, Award, Clock } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const About = () => {
   return (
     <div className="w-full overflow-x-hidden">
+      <SEO title="About Us" description="Learn more about Panum A.D. Structures and our history of excellence in construction." />
       
       {/* 1. Page Hero Section */}
       <section className="relative h-[40vh] w-full bg-gray-900 text-white flex items-center justify-center">
@@ -21,29 +23,26 @@ const About = () => {
             <h2 className="text-3xl font-bold text-brand-blue mb-6">WHO WE ARE</h2>
             <div className="space-y-4 text-gray-600 leading-relaxed">
               <p>
-                Panum Ad Estates Limited is a leading real estate and construction company committed to delivering top-quality housing solutions in decent, life-enhancing environments. 
+                Panum A.D. Structures is a leading construction and structural engineering firm committed to delivering top-quality building solutions. We handle residential and commercial projects from foundation to completion with a focus on quality, durability, and timely delivery.
               </p>
               <p>
-                Founded on the principles of integrity, innovation, and excellence, we do not aim at giving our clients just shelter; we deliver houses that redefine their ways of life. Through our revolutionary EPS technology and strategic partnerships with both federal and state governments, we are actively bridging the housing deficit across the nation.
-              </p>
-              <p>
-                With over a decade of hands-on experience in the built environment, our portfolio spans across luxury residential estates, commercial complexes, and master-planned communities.
+                As a firm rooted in professionalism and precision, we bring a hands-on approach to every project, ensuring strict supervision, quality control, and adherence to engineering standards. Our team of experienced professionals ensures that every structure we build is not only highly functional but built to last.
               </p>
             </div>
             <div className="mt-8 flex gap-6">
               <div className="border-l-4 border-brand-lightBlue pl-4">
-                <p className="text-3xl font-bold text-brand-blue">15+</p>
+                <p className="text-3xl font-bold text-brand-blue">3+</p>
                 <p className="text-sm text-gray-500 font-semibold uppercase">Years Experience</p>
               </div>
               <div className="border-l-4 border-brand-lightBlue pl-4">
-                <p className="text-3xl font-bold text-brand-blue">5k+</p>
-                <p className="text-sm text-gray-500 font-semibold uppercase">Housing Units</p>
+                <p className="text-3xl font-bold text-brand-blue">10+</p>
+                <p className="text-sm text-gray-500 font-semibold uppercase">Projects Completed</p>
               </div>
             </div>
           </div>
           <div className="md:w-1/2 grid grid-cols-2 gap-4">
-            <img src="https://images.unsplash.com/photo-1541888086425-d81bb19240f5?auto=format&fit=crop&q=80&w=600" alt="Construction site" className="rounded shadow-md h-64 w-full object-cover mt-8" />
-            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=600" alt="Finished home" className="rounded shadow-md h-64 w-full object-cover" />
+            <img src="/project-images/1 (2).jpeg" alt="Construction site" className="rounded shadow-md h-64 w-full object-cover mt-8" />
+            <img src="/project-images/1 (3).jpeg" alt="Finished home" className="rounded shadow-md h-64 w-full object-cover" />
           </div>
         </div>
       </section>
@@ -58,7 +57,7 @@ const About = () => {
             </div>
             <h3 className="text-2xl font-bold text-brand-blue mb-4">OUR VISION</h3>
             <p className="text-gray-600 leading-relaxed">
-              To be the foremost real estate development company in Africa, renowned for pioneering innovative building technologies, delivering unparalleled luxury, and creating sustainable communities where people thrive.
+              To be a leading construction and structural engineering firm known for delivering durable, innovative, and high-quality projects that stand the test of time.
             </p>
           </div>
           {/* Mission */}
@@ -68,7 +67,7 @@ const About = () => {
             </div>
             <h3 className="text-2xl font-bold text-brand-blue mb-4">OUR MISSION</h3>
             <p className="text-gray-600 leading-relaxed">
-              To consistently exceed client expectations by utilizing state-of-the-art construction methodologies, maintaining the highest standards of safety and quality, and fostering a culture of excellence among our workforce.
+              To provide reliable construction, structural design, and maintenance solutions through professionalism, precision, and a commitment to excellence, ensuring client satisfaction at every stage of project delivery.
             </p>
           </div>
         </div>
@@ -99,24 +98,17 @@ const About = () => {
 
       {/* 5. CEO Message */}
       <section className="py-20 px-4 md:px-10 bg-white">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 bg-gray-50 p-8 md:p-12 rounded shadow-sm">
-          <div className="md:w-1/3">
-            <div className="w-full aspect-square bg-gray-300 rounded overflow-hidden border-4 border-white shadow-lg">
-              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=600" alt="CEO" className="w-full h-full object-cover" />
-            </div>
-          </div>
-          <div className="md:w-2/3">
-            <h2 className="text-3xl font-bold text-brand-blue mb-2">MESSAGE FROM THE MD/CEO</h2>
-            <h4 className="text-brand-lightBlue font-semibold mb-6">Engr. Eric Eliezer</h4>
-            <div className="space-y-4 text-gray-600 italic">
+        <div className="max-w-4xl mx-auto flex flex-col items-center text-center bg-gray-50 p-10 md:p-16 rounded shadow-sm border-t-4 border-brand-blue">
+            <h2 className="text-3xl font-bold text-brand-blue mb-2 uppercase">Meet the CEO</h2>
+            <div className="w-16 h-1 bg-brand-lightBlue mb-8"></div>
+            <div className="space-y-6 text-gray-700 text-lg leading-relaxed md:px-8">
               <p>
-                "Welcome to Panum Ad Estates. When we started this journey, our goal was simple: to eradicate the housing deficit in Nigeria by providing homes that aren't just structurally sound, but are sanctuaries for the families that live in them.
+                "I am a professional builder and structural engineering designer with a strong passion for delivering safe, durable, and well-executed construction projects. As the CEO of Panum A.D. Structures, I bring a hands-on approach to every project, ensuring strict supervision, quality control, and adherence to engineering standards."
               </p>
               <p>
-                Today, through our revolutionary EPS technology and unwavering commitment to quality, we are doing exactly that. We believe that everyone deserves a decent home in a life-enhancing environment. Our promise to you is continuous innovation, transparent dealings, and timely delivery. Thank you for trusting us to build your dreams."
+                "With experience in both design and site execution, I am committed to building structures that are not only functional but built to last. My goal is to consistently deliver value, reliability, and excellence to every client."
               </p>
             </div>
-          </div>
         </div>
       </section>
 

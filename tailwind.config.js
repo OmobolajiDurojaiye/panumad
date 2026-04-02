@@ -9,9 +9,10 @@ export default {
     extend: {
       colors: {
         brand: {
-          blue: '#1e3a8a', // Deep blue
-          lightBlue: '#2563eb', // Standard blue
-          dark: '#0f172a', // Near black for footers/sections
+          blue: '#0056D2', // Vibrant Blue
+          lightBlue: '#00B4A2', // Electric Teal
+          dark: '#4A4A4A', // Graphite
+          silver: '#A8A8A8', // Steel Silver
         }
       }
     },
