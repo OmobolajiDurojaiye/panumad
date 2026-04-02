@@ -10,7 +10,7 @@ export default {
       colors: {
         brand: {
           blue: '#0056D2', // Vibrant Blue
-          lightBlue: '#00B4A2', // Electric Teal
+          lightBlue: '#3B82F6', // True Light Blue
           dark: '#4A4A4A', // Graphite
           silver: '#A8A8A8', // Steel Silver
         }
