@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://panumad.vercel.app/sitemap.xml
+Sitemap: https://www.panumad.com/sitemap.xml
