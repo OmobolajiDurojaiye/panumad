@@ -8,10 +8,10 @@ const Projects = () => {
   const estates = [
     {
       id: 1,
-      name: "Foundation Works",
-      location: "Abuja, FCT",
-      description: "Client consultancy role involving structural supervision, ensuring compliance with design specifications and reporting progress.",
-      features: ["Structural Supervision", "Compliance Checking", "Progress Reporting", "Quality Control"],
+      name: "Foundation Works: Katampe, Abuja",
+      location: "Katampe, Abuja",
+      description: "A pivotal consultancy role involving structural supervision, ensuring compliance with design specifications and reporting progress for high-end residential foundation works.",
+      features: ["Structural Supervision", "Compliance Checking", "Consultancy Role", "Quality Control"],
       image: "/project-images/1 (10).jpeg"
     },
     {
@@ -24,10 +24,10 @@ const Projects = () => {
     },
     {
       id: 3,
-      name: "Upcoming Luxury Development",
-      location: "Abuja, FCT",
-      description: "Anticipated high-end residential structure currently undergoing engineering design, modeling, and strategic surveying phases.",
-      features: ["Engineering Design", "3D Modeling", "Surveying", "Material Planning"],
+      name: "Upcoming Luxury: The 5 Bedroom Duplex",
+      location: "Citec, Mount Pleasant Estates, Mbora District, Abuja",
+      description: "A luxury 5 bedroom duplex with penthouse floors. Currently undergoing intensive engineering design, modeling, and strategic surveying phases.",
+      features: ["Penthouse Floors", "Engineering Design", "3D Modeling", "Material Planning"],
       image: "/project-images/1 (12).jpeg"
     }
   ];

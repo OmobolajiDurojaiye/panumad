@@ -256,9 +256,9 @@ const Home = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-left">
             {[
-              { title: "Foundation Works", desc: "Client consultancy role involving structural supervision, ensuring compliance with design specifications and reporting progress.", loc: "Abuja, FCT", img: "/project-images/1 (10).jpeg" },
+              { title: "Foundation Works: Katampe, Abuja", desc: "A pivotal consultancy role involving structural supervision and compliance reporting for high-end foundation works.", loc: "Katampe, Abuja", img: "/project-images/1 (10).jpeg" },
               { title: "Structural Development", desc: "Full construction project from setting out to completion and handover, ensuring quality control and structural integrity.", loc: "Abuja, FCT", img: "/project-images/1 (11).jpeg" },
-              { title: "Upcoming Luxury Development", desc: "Anticipated high-end residential structure currently undergoing engineering design, modeling, and strategic surveying phases.", loc: "Abuja, FCT", img: "/project-images/1 (12).jpeg" }
+              { title: "Upcoming Luxury: The 5 Bedroom Duplex", desc: "The 5 bedroom duplex with penth floors at Citec, Mount pleasant Estates, mbora district Abuja. Currently in design phase.", loc: "Mbora, Abuja", img: "/project-images/1 (12).jpeg" }
             ].map((estate, idx) => (
               <div key={idx} className="flex flex-col h-full bg-white group shadow-sm hover:shadow-2xl transition duration-500">
                 <div className="w-full h-64 bg-gray-200 relative overflow-hidden">

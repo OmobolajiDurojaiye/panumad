@@ -31,7 +31,7 @@ const About = () => {
             </div>
             <div className="mt-8 flex gap-6">
               <div className="border-l-4 border-brand-lightBlue pl-4">
-                <p className="text-3xl font-bold text-brand-blue">3+</p>
+                <p className="text-3xl font-bold text-brand-blue">5+</p>
                 <p className="text-sm text-gray-500 font-semibold uppercase">Years Experience</p>
               </div>
               <div className="border-l-4 border-brand-lightBlue pl-4">

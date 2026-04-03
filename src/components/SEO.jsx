@@ -10,7 +10,7 @@ return (
     { /* Standard metadata tags */ }
     <title>{`${title} | Panum A.D. Structures`}</title>
     <meta name='description' content={description} />
-    <meta name="keywords" content="Construction company Abuja, Building contractors Nigeria, Civil Engineering Nigeria, EPS Building Technology, Affordable housing construction, Panum Ad" />
+    <meta name="keywords" content="Panum, Panum A.D., Panum Structures, Panum Ad, Panum Construction, Construction company Abuja, Building contractors Nigeria, Civil Engineering Nigeria, EPS Building Technology, Affordable housing construction" />
     
     { /* End standard metadata tags */ }
     { /* Facebook tags */ }

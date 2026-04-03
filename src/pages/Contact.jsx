@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MapPin, Phone, Mail, Clock, Send, MessageSquare } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Send, MessageSquare, CheckCircle2 } from 'lucide-react';
 import SEO from '../components/SEO';
 
 const Contact = () => {
@@ -47,195 +47,129 @@ const Contact = () => {
       </section>
 
       {/* 2. Main Contact Content */}
+      {/* 2. Main Contact Content */}
       <section className="max-w-7xl mx-auto px-4 md:px-10 py-16 md:py-24">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
-          {/* Left Side: Contact Information (Takes up 2/5 of grid) */}
-          <div className="md:col-span-2 space-y-8">
+          {/* Left Side: Contact Information */}
+          <div className="space-y-10">
             <div>
-              <h2 className="text-3xl font-bold text-brand-blue mb-2">Contact Details</h2>
-              <div className="w-16 h-1 bg-brand-lightBlue mb-6"></div>
-              <p className="text-gray-600 mb-8 leading-relaxed">
-                Whether you have a question about our estates, need assistance with your property, or want to partner with us on a new project, our team is ready to answer all your questions.
+              <h2 className="text-4xl font-bold text-brand-blue mb-4">Let's Build Something Together</h2>
+              <div className="w-20 h-1.5 bg-brand-lightBlue mb-8"></div>
+              <p className="text-gray-600 text-lg leading-relaxed max-w-xl">
+                Ready to start your next project or have questions about our services? We're just a message away. Reach out through any of our channels below.
               </p>
             </div>
 
-            {/* Info Cards */}
-            <div className="space-y-6">
-              {/* Address */}
-              <div className="flex items-start bg-white p-6 rounded shadow-sm border border-gray-100 hover:border-brand-lightBlue transition">
-                <div className="bg-blue-50 p-3 rounded-full mr-4 text-brand-lightBlue">
-                  <MapPin size={24} />
+            {/* Info Cards - Interactive */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {/* WhatsApp / Phone */}
+              <a 
+                href="https://wa.me/message/DSMZ66AI5ZHFF1" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-start bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-green-500 hover:shadow-md transition-all group"
+              >
+                <div className="bg-green-50 p-4 rounded-full mr-4 text-green-600 group-hover:bg-green-600 group-hover:text-white transition-colors">
+                  <MessageSquare size={28} />
+                </div>
+                <div>
+                  <h4 className="font-bold text-gray-800 mb-1">WhatsApp Us</h4>
+                  <p className="text-gray-600 text-sm font-medium">08029617972</p>
+                  <p className="text-green-600 text-xs mt-1 font-bold">Fastest Response →</p>
+                </div>
+              </a>
+
+              {/* Email */}
+              <a 
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=panumadstruct@gmail.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-start bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-brand-blue hover:shadow-md transition-all group"
+              >
+                <div className="bg-blue-50 p-4 rounded-full mr-4 text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-colors">
+                  <Mail size={28} />
+                </div>
+                <div>
+                  <h4 className="font-bold text-gray-800 mb-1">Email Us</h4>
+                  <p className="text-gray-600 text-sm font-medium break-all">panumadstruct@gmail.com</p>
+                </div>
+              </a>
+
+              {/* Head Office */}
+              <div className="flex items-start bg-white p-6 rounded-xl shadow-sm border border-gray-100 transition-all sm:col-span-2">
+                <div className="bg-blue-50 p-4 rounded-full mr-4 text-brand-lightBlue">
+                  <MapPin size={28} />
                 </div>
                 <div>
                   <h4 className="font-bold text-gray-800 mb-1">Head Office</h4>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    PANUM A.D. STRUCTURES<br />
-                    Abuja, FCT, Nigeria.
+                    PANUM A.D. STRUCTURES, Abuja, FCT, Nigeria.
                   </p>
                 </div>
               </div>
-
-              {/* Phone */}
-              <div className="flex items-start bg-white p-6 rounded shadow-sm border border-gray-100 hover:border-brand-lightBlue transition">
-                <div className="bg-blue-50 p-3 rounded-full mr-4 text-brand-lightBlue">
-                  <Phone size={24} />
-                </div>
-                <div>
-                  <h4 className="font-bold text-gray-800 mb-1">Phone Numbers</h4>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    08029617972
-                  </p>
-                </div>
-              </div>
-
-              {/* Email */}
-              <div className="flex items-start bg-white p-6 rounded shadow-sm border border-gray-100 hover:border-brand-lightBlue transition">
-                <div className="bg-blue-50 p-3 rounded-full mr-4 text-brand-lightBlue">
-                  <Mail size={24} />
-                </div>
-                <div>
-                  <h4 className="font-bold text-gray-800 mb-1">Email Address</h4>
-                  <p className="text-gray-600 text-sm">panumadstruct@gmail.com</p>
-                </div>
-              </div>
-
-              {/* Business Hours */}
-              <div className="flex items-start bg-white p-6 rounded shadow-sm border border-gray-100 hover:border-brand-lightBlue transition">
-                <div className="bg-blue-50 p-3 rounded-full mr-4 text-brand-lightBlue">
-                  <Clock size={24} />
-                </div>
-                <div>
-                  <h4 className="font-bold text-gray-800 mb-1">Business Hours</h4>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    Monday - Saturday: 8:00 AM - 6:00 PM<br />
-                    Sunday: By Appointment
-                  </p>
-                </div>
-              </div>
+            </div>
+            
+            <div className="pt-6">
+               <p className="text-gray-400 text-sm flex items-center">
+                 <Clock size={16} className="mr-2" />
+                 Operating Hours: Mon - Sat (8:00 AM - 6:00 PM)
+               </p>
             </div>
           </div>
 
-          {/* Right Side: Contact Form (Takes up 3/5 of grid) */}
-          <div className="md:col-span-3">
-            <div className="bg-white p-8 md:p-10 rounded-lg shadow-xl border-t-4 border-brand-blue relative">
-              {/* "Say Hi" decorative icon matching the footer inspiration */}
-              <div className="absolute -top-6 right-8 bg-brand-lightBlue text-white p-3 rounded-full shadow-lg">
-                <MessageSquare size={24} />
-              </div>
-              
-              <h3 className="text-2xl font-bold text-gray-800 mb-6">Send Us a Message</h3>
-              
-              <form className="space-y-6" onSubmit={handleSubmit}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {/* Name Input */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="name">Full Name</label>
-                    <input 
-                      type="text" 
-                      id="name" 
-                      name="name"
-                      required
-                      className="w-full bg-gray-50 border border-gray-200 rounded px-4 py-3 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition"
-                      placeholder="John Doe"
-                    />
+          {/* Right Side: Beautiful WhatsApp Focus Section */}
+          <div className="relative">
+            {/* Decorative background pulse */}
+            <div className="absolute -inset-4 bg-green-500/10 rounded-full blur-3xl animate-pulse"></div>
+            
+            <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
+               {/* Header of the card */}
+               <div className="bg-green-600 p-8 text-white text-center">
+                  <div className="inline-flex items-center justify-center p-4 bg-white/20 rounded-full mb-4 backdrop-blur-sm">
+                    <svg viewBox="0 0 24 24" width="48" height="48" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.445 0 .081 5.363.078 11.969c0 2.112.551 4.173 1.597 6.011L0 24l6.193-1.624c1.78.97 3.793 1.481 5.845 1.483h.005c6.602 0 11.967-5.366 11.97-11.973a11.866 11.866 0 00-3.504-8.471"/></svg>
                   </div>
-                  {/* Phone Input */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="phone">Phone Number</label>
-                    <input 
-                      type="tel" 
-                      id="phone" 
-                      name="phone"
-                      required
-                      className="w-full bg-gray-50 border border-gray-200 rounded px-4 py-3 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition"
-                      placeholder="+234 800 000 0000"
-                    />
+                  <h3 className="text-3xl font-black tracking-tight mb-2 uppercase">Chat on WhatsApp</h3>
+                  <p className="text-green-100 font-medium">Instant Support & Project Inquiries</p>
+               </div>
+               
+               {/* Body of the card */}
+               <div className="p-10 text-center">
+                  <div className="mb-8 space-y-4">
+                    <div className="flex items-center justify-center space-x-3 text-gray-700 font-bold">
+                       <CheckCircle2 size={20} className="text-green-500" />
+                       <span>Real-time Consultation</span>
+                    </div>
+                    <div className="flex items-center justify-center space-x-3 text-gray-700 font-bold">
+                       <CheckCircle2 size={20} className="text-green-500" />
+                       <span>Share Files & Designs Instantly</span>
+                    </div>
+                    <div className="flex items-center justify-center space-x-3 text-gray-700 font-bold">
+                       <CheckCircle2 size={20} className="text-green-500" />
+                       <span>Direct access to engineering team</span>
+                    </div>
                   </div>
-                </div>
 
-                {/* Email Input */}
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="email">Email Address</label>
-                  <input 
-                    type="email" 
-                    id="email" 
-                    name="email"
-                    required
-                    className="w-full bg-gray-50 border border-gray-200 rounded px-4 py-3 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition"
-                    placeholder="john@example.com"
-                  />
-                </div>
-
-                {/* Subject Input */}
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="subject">Subject / Project of Interest</label>
-                  <select 
-                    id="subject" 
-                    name="subject_of_interest"
-                    className="w-full bg-gray-50 border border-gray-200 rounded px-4 py-3 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition text-gray-600"
+                  <a 
+                    href="https://wa.me/message/DSMZ66AI5ZHFF1" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block w-full bg-green-600 text-white font-black py-5 rounded-xl shadow-xl hover:bg-green-700 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-green-900/20 uppercase tracking-widest text-lg"
                   >
-                    <option value="General Inquiry">General Inquiry</option>
-                    <option value="Building Construction">Building Construction</option>
-                    <option value="Structural Design">Structural Design</option>
-                    <option value="Maintenance & Renovation">Maintenance & Renovation</option>
-                    <option value="Partnership/Investment">Partnership/Investment</option>
-                  </select>
-                </div>
-
-                {/* Message Input */}
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="message">Your Message</label>
-                  <textarea 
-                    id="message" 
-                    name="message"
-                    required
-                    rows="5" 
-                    className="w-full bg-gray-50 border border-gray-200 rounded px-4 py-3 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition resize-none"
-                    placeholder="How can we help you today?"
-                  ></textarea>
-                </div>
-
-                {/* Form Status Message */}
-                {formStatus && (
-                  <div className={`p-4 rounded ${formStatus.includes('success') ? 'bg-green-50 text-green-700 border border-green-200' : formStatus === 'Sending...' ? 'bg-blue-50 text-brand-blue border border-blue-200' : 'bg-red-50 text-red-700 border border-red-200'}`}>
-                    <p className="font-semibold text-sm">{formStatus}</p>
-                  </div>
-                )}
-
-                {/* Submit Button */}
-                <button 
-                  type="submit" 
-                  disabled={formStatus === 'Sending...'}
-                  className="w-full bg-brand-blue text-white font-bold text-lg px-6 py-4 rounded hover:bg-brand-lightBlue transition shadow-lg flex items-center justify-center group disabled:opacity-70"
-                >
-                  {formStatus === 'Sending...' ? 'SENDING...' : 'SEND MESSAGE'}
-                  <Send size={20} className="ml-2 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                </button>
-              </form>
+                    Start Chatting Now
+                  </a>
+                  
+                  <p className="mt-8 text-gray-400 text-sm">
+                    Typical response time: <span className="font-bold text-green-600">under 30 minutes</span>
+                  </p>
+               </div>
             </div>
+            
+            {/* Visual element: floating bubbles or similar */}
+            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-brand-blue/10 rounded-full -z-10 blur-xl"></div>
+            <div className="absolute -top-10 -left-10 w-40 h-40 bg-brand-lightBlue/10 rounded-full -z-10 blur-2xl"></div>
           </div>
           
-        </div>
-      </section>
-
-      {/* 3. Full Width Map Section */}
-      <section className="w-full h-96 bg-gray-300 relative">
-        {/* Using a Google Maps embed centered on Abuja */}
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.165419488313!2d7.408796114786793!3d9.04870189350711!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e7498c0b62d85%3A0x8dfb0fde4ba85b1a!2sJabi%20Airport%20Bypass!5e0!3m2!1sen!2sng!4v1683220000000!5m2!1sen!2sng" 
-          width="100%" 
-          height="100%" 
-          style={{ border: 0 }} 
-          allowFullScreen="" 
-          loading="lazy" 
-          referrerPolicy="no-referrer-when-downgrade"
-          title="Panum Ad Estates Location Map"
-        ></iframe>
-        
-        {/* "Open in Google Maps" overlay matching footer */}
-        <div className="absolute bottom-6 right-6 bg-black text-white px-4 py-2 text-sm rounded shadow-lg flex items-center hover:bg-gray-800 transition cursor-pointer z-10">
-           <MapPin size={16} className="mr-2"/> Open in Google Maps
         </div>
       </section>
 

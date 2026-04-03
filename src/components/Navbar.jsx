@@ -100,18 +100,35 @@ const Navbar = () => {
         {/* Top Info Bar (Black) */}
         <div className="bg-black text-white text-[10px] md:text-xs py-2.5 px-4 md:px-10 flex flex-col md:flex-row justify-between items-center tracking-wider">
           <div className="flex items-center space-x-6">
-            <span className="flex items-center hover:text-brand-lightBlue transition cursor-default">
+            <a 
+              href="https://wa.me/message/DSMZ66AI5ZHFF1" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center hover:text-brand-lightBlue transition group"
+            >
+              <div className="bg-green-600 p-0.5 rounded-full mr-2 group-hover:scale-110 transition-transform">
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.445 0 .081 5.363.078 11.969c0 2.112.551 4.173 1.597 6.011L0 24l6.193-1.624c1.78.97 3.793 1.481 5.845 1.483h.005c6.602 0 11.967-5.366 11.97-11.973a11.866 11.866 0 00-3.504-8.471"/></svg>
+              </div>
               <Phone size={14} className="mr-2 text-brand-lightBlue" /> 08029617972
-            </span>
-            <span className="flex items-center hover:text-brand-lightBlue transition cursor-default">
+            </a>
+            <a 
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=panumadstruct@gmail.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center hover:text-brand-lightBlue transition"
+            >
               <Mail size={14} className="mr-2 text-brand-lightBlue" /> panumadstruct@gmail.com
-            </span>
+            </a>
           </div>
           <div className="flex items-center space-x-5 mt-2 md:mt-0 opacity-60">
             <span className="mr-2 font-bold text-[9px] uppercase hidden lg:inline">Follow Our Engineering Journey:</span>
-            <Facebook size={16} className="hover:text-brand-lightBlue cursor-pointer transition" />
+            <a href="https://www.facebook.com/profile.php?id=61574938955462" target="_blank" rel="noopener noreferrer">
+              <Facebook size={16} className="hover:text-brand-lightBlue cursor-pointer transition" />
+            </a>
             <Twitter size={16} className="hover:text-brand-lightBlue cursor-pointer transition" />
-            <Instagram size={16} className="hover:text-brand-lightBlue cursor-pointer transition" />
+            <a href="https://www.instagram.com/panum.a.d?igsh=MWFieTkxd2s0cWxiMg==" target="_blank" rel="noopener noreferrer">
+              <Instagram size={16} className="hover:text-brand-lightBlue cursor-pointer transition" />
+            </a>
           </div>
         </div>
 
