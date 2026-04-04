@@ -65,7 +65,9 @@ const Footer = () => {
           <a href="https://www.facebook.com/profile.php?id=61574938955462" target="_blank" rel="noopener noreferrer">
             <Facebook className="hover:text-white transition cursor-pointer" size={20} />
           </a>
-          <Twitter className="hover:text-white transition cursor-pointer" size={20} />
+          <a href="https://x.com/panum_adstruc" target="_blank" rel="noopener noreferrer">
+            <Twitter className="hover:text-white transition cursor-pointer" size={20} />
+          </a>
           <a href="https://www.instagram.com/panum.a.d?igsh=MWFieTkxd2s0cWxiMg==" target="_blank" rel="noopener noreferrer">
             <Instagram className="hover:text-white transition cursor-pointer" size={20} />
           </a>

@@ -125,7 +125,9 @@ const Navbar = () => {
             <a href="https://www.facebook.com/profile.php?id=61574938955462" target="_blank" rel="noopener noreferrer">
               <Facebook size={16} className="hover:text-brand-lightBlue cursor-pointer transition" />
             </a>
-            <Twitter size={16} className="hover:text-brand-lightBlue cursor-pointer transition" />
+            <a href="https://x.com/panum_adstruc" target="_blank" rel="noopener noreferrer">
+              <Twitter size={16} className="hover:text-brand-lightBlue cursor-pointer transition" />
+            </a>
             <a href="https://www.instagram.com/panum.a.d?igsh=MWFieTkxd2s0cWxiMg==" target="_blank" rel="noopener noreferrer">
               <Instagram size={16} className="hover:text-brand-lightBlue cursor-pointer transition" />
             </a>
@@ -231,7 +233,11 @@ const Navbar = () => {
                   TALK TO US
                </Link>
                <div className="mt-10 flex justify-center space-x-8 opacity-40">
-                  <Facebook size={20} /><Twitter size={20} /><Instagram size={20} />
+                  <Facebook size={20} />
+                  <a href="https://x.com/panum_adstruc" target="_blank" rel="noopener noreferrer">
+                    <Twitter size={20} />
+                  </a>
+                  <Instagram size={20} />
                </div>
             </div>
           </div>
