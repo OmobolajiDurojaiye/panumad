@@ -9,6 +9,7 @@ import {
   HardHat, 
   Hammer, 
   CheckCircle2, 
+  ShieldCheck,
   Video 
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -58,7 +59,7 @@ const Home = () => {
       {/* 0. SEO METADATA */}
       <SEO 
         title="Home" 
-        description="Panum Ad Construction is Nigeria's premier engineering firm specializing in EPS technology, luxury residential builds, and large-scale infrastructure projects."
+        description="Panum A.D. Structures is a construction and structural engineering company that combines strength, precision, and innovative thinking to deliver durable and high-quality building solutions."
         type="website"
       />
 
@@ -180,6 +181,58 @@ const Home = () => {
         </div>
       </section>
 
+      {/* 3.5. ON-SITE ACTION SECTION (Dynamic Recent Works) */}
+      <section className="py-24 px-6 md:px-10 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-12">
+            <div className="md:w-2/3">
+              <h2 className="text-4xl md:text-5xl font-bold text-brand-blue mb-4 uppercase tracking-tight">ON-SITE ACTION</h2>
+              <p className="text-gray-600 text-lg max-w-2xl">Real-time snapshots from our ongoing projects. We don't just design; we build with precision and supervise every detail on the field.</p>
+            </div>
+            <Link to="/gallery" className="mt-6 md:mt-0 text-brand-lightBlue font-bold flex items-center hover:underline group">
+              VIEW FULL GALLERY <ChevronRight size={20} className="ml-1 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[300px]">
+            {/* Main Video Highlight */}
+            <div className="md:col-span-2 md:row-span-2 relative rounded-2xl overflow-hidden shadow-2xl group">
+              <video 
+                src="/project-images/more-images/2 (1).mp4" 
+                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" 
+                autoPlay 
+                muted 
+                loop 
+                playsInline
+                aria-label="Video showing on-site construction work by Panum A.D. Structures"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-8">
+                <span className="bg-brand-lightBlue text-white px-3 py-1 text-[10px] font-bold w-max mb-2 rounded-full uppercase tracking-widest opacity-60">Action</span>
+              </div>
+            </div>
+
+            {/* Image Grid Items */}
+            <div className="relative rounded-2xl overflow-hidden shadow-xl group">
+              <img src="/project-images/more-images/2 (12).jpeg" alt="Structural slab preparation and reinforcement on construction site" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+              <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity">
+              </div>
+            </div>
+            
+            <div className="relative rounded-2xl overflow-hidden shadow-xl group">
+              <img src="/project-images/more-images/2 (10).jpeg" alt="Engineering site inspection and structural quality assurance" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+              <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity">
+              </div>
+            </div>
+
+            <div className="md:col-span-2 relative rounded-2xl overflow-hidden shadow-xl group">
+               <img src="/project-images/more-images/2 (15).jpeg" alt="Aerial view of ongoing large scale construction project by Panum A.D. Structures" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+               <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity">
+               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 4. CORE CONSTRUCTION SERVICES (SEO RICH SECTION) */}
       <section className="py-24 px-6 md:px-10 bg-white">
         <div className="max-w-7xl mx-auto">
@@ -187,46 +240,31 @@ const Home = () => {
             <h2 className="text-4xl font-bold text-brand-blue uppercase tracking-[0.15em] mb-4">OUR SERVICES</h2>
             <div className="w-24 h-1.5 bg-brand-lightBlue mx-auto"></div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-gray-50 p-8 border-t-4 border-brand-lightBlue hover:bg-white hover:shadow-xl transition duration-500">
-              <Building2 className="text-brand-lightBlue w-10 h-10 mb-4" />
-              <h3 className="text-xl font-bold text-gray-800 mb-3">Building Construction</h3>
-              <p className="text-gray-600 leading-relaxed text-sm">We handle residential and commercial construction projects from foundation to completion with a focus on quality, durability, and timely delivery.</p>
-            </div>
-            <div className="bg-gray-50 p-8 border-t-4 border-brand-lightBlue hover:bg-white hover:shadow-xl transition duration-500">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            <div className="bg-gray-50 p-8 border-t-4 border-brand-lightBlue hover:bg-white hover:shadow-xl transition duration-500 flex flex-col h-full">
               <HardHat className="text-brand-lightBlue w-10 h-10 mb-4" />
               <h3 className="text-xl font-bold text-gray-800 mb-3">Structural Engineering Design</h3>
-              <p className="text-gray-600 leading-relaxed text-sm">We provide detailed structural designs, calculations, and drawings to ensure safety, stability, and compliance with engineering standards.</p>
+              <p className="text-gray-600 leading-relaxed text-sm flex-grow">We provide detailed structural designs, calculations, and drawings to ensure safety, stability, and compliance with engineering standards.</p>
             </div>
-            <div className="bg-gray-50 p-8 border-t-4 border-brand-lightBlue hover:bg-white hover:shadow-xl transition duration-500">
-              <Hammer className="text-brand-lightBlue w-10 h-10 mb-4" />
-              <h3 className="text-xl font-bold text-gray-800 mb-3">Building Maintenance</h3>
-              <p className="text-gray-600 leading-relaxed text-sm">We offer professional maintenance services to preserve the integrity and functionality of buildings over time.</p>
-            </div>
-            <div className="bg-gray-50 p-8 border-t-4 border-brand-lightBlue hover:bg-white hover:shadow-xl transition duration-500">
+            <div className="bg-gray-50 p-8 border-t-4 border-brand-lightBlue hover:bg-white hover:shadow-xl transition duration-500 flex flex-col h-full">
               <Building2 className="text-brand-lightBlue w-10 h-10 mb-4" />
-              <h3 className="text-xl font-bold text-gray-800 mb-3">Renovation & Remodeling</h3>
-              <p className="text-gray-600 leading-relaxed text-sm">We upgrade and transform existing structures to improve aesthetics, functionality, and value.</p>
+              <h3 className="text-xl font-bold text-gray-800 mb-3">Building Construction</h3>
+              <p className="text-gray-600 leading-relaxed text-sm flex-grow">We handle residential and commercial construction projects from foundation to completion with a focus on quality, durability, and timely delivery.</p>
             </div>
-            <div className="bg-gray-50 p-8 border-t-4 border-brand-lightBlue hover:bg-white hover:shadow-xl transition duration-500">
+            <div className="bg-gray-50 p-8 border-t-4 border-brand-lightBlue hover:bg-white hover:shadow-xl transition duration-500 flex flex-col h-full">
+              <Hammer className="text-brand-lightBlue w-10 h-10 mb-4" />
+              <h3 className="text-xl font-bold text-gray-800 mb-3">Maintenance & Renovation</h3>
+              <p className="text-gray-600 leading-relaxed text-sm flex-grow">We offer professional maintenance and renovation services to preserve and upgrade the integrity and functionality of buildings.</p>
+            </div>
+            <div className="bg-gray-50 p-8 border-t-4 border-brand-lightBlue hover:bg-white hover:shadow-xl transition duration-500 flex flex-col h-full">
+              <ShieldCheck className="text-brand-lightBlue w-10 h-10 mb-4" />
+              <h3 className="text-xl font-bold text-gray-800 mb-3">Project Supervision</h3>
+              <p className="text-gray-600 leading-relaxed text-sm flex-grow">Expert oversight and technical supervision to ensure projects are executed according to engineering specifications and quality standards.</p>
+            </div>
+            <div className="bg-gray-50 p-8 border-t-4 border-brand-lightBlue hover:bg-white hover:shadow-xl transition duration-500 flex flex-col h-full">
               <CheckCircle2 className="text-brand-lightBlue w-10 h-10 mb-4" />
               <h3 className="text-xl font-bold text-gray-800 mb-3">Facility Management</h3>
-              <p className="text-gray-600 leading-relaxed text-sm">We manage building operations, ensuring efficiency, maintenance, and long-term sustainability.</p>
-            </div>
-            <div className="bg-gray-50 p-8 border-t-4 border-brand-lightBlue hover:bg-white hover:shadow-xl transition duration-500">
-              <Hammer className="text-brand-lightBlue w-10 h-10 mb-4" />
-              <h3 className="text-xl font-bold text-gray-800 mb-3">Structural Repairs</h3>
-              <p className="text-gray-600 leading-relaxed text-sm">We diagnose and fix structural defects such as cracks, settlement issues, and reinforcement failures.</p>
-            </div>
-            <div className="bg-gray-50 p-8 border-t-4 border-brand-lightBlue hover:bg-white hover:shadow-xl transition duration-500">
-              <Building2 className="text-brand-lightBlue w-10 h-10 mb-4" />
-              <h3 className="text-xl font-bold text-gray-800 mb-3">Painting & Finishing</h3>
-              <p className="text-gray-600 leading-relaxed text-sm">High-quality finishing services that enhance durability and visual appeal.</p>
-            </div>
-            <div className="bg-gray-50 p-8 border-t-4 border-brand-lightBlue hover:bg-white hover:shadow-xl transition duration-500">
-              <HardHat className="text-brand-lightBlue w-10 h-10 mb-4" />
-              <h3 className="text-xl font-bold text-gray-800 mb-3">Electrical & Plumbing Works</h3>
-              <p className="text-gray-600 leading-relaxed text-sm">Installation and maintenance of essential building services with professional standards.</p>
+              <p className="text-gray-600 leading-relaxed text-sm flex-grow">Comprehensive management of building operations, ensuring long-term efficiency, maintenance, and sustainability.</p>
             </div>
           </div>
         </div>

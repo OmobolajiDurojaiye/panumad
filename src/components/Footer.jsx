@@ -42,9 +42,7 @@ const Footer = () => {
             08029617972 (WhatsApp)
           </a>
           <a 
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=panumadstruct@gmail.com" 
-            target="_blank" 
-            rel="noopener noreferrer"
+            href="mailto:panumadstruct@gmail.com" 
             className="flex items-center text-gray-400 mb-2 hover:text-brand-lightBlue transition"
           >
             <Mail size={16} className="mr-2"/> panumadstruct@gmail.com

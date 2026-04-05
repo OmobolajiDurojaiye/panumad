@@ -35,7 +35,7 @@ const Contact = () => {
   };
   return (
     <div className="w-full overflow-x-hidden bg-gray-50">
-      <SEO title="Contact Us" description="Get in touch with Panum A.D. Structures for structural engineering, residential construction, and renovation inquiries in Abuja." />
+      <SEO title="Contact Us" description="Get in touch with Panum A.D. Structures for structural engineering, residential construction, and renovation inquiries. We deliver tech-driven building solutions." />
       
       {/* 1. Page Hero Section */}
       <section className="relative h-[30vh] md:h-[40vh] w-full bg-brand-blue text-white flex items-center justify-center">
@@ -82,9 +82,7 @@ const Contact = () => {
 
               {/* Email */}
               <a 
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=panumadstruct@gmail.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
+                href="mailto:panumadstruct@gmail.com" 
                 className="flex items-start bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-brand-blue hover:shadow-md transition-all group"
               >
                 <div className="bg-blue-50 p-4 rounded-full mr-4 text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-colors">

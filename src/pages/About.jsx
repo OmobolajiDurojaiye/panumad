@@ -20,13 +20,13 @@ const About = () => {
       <section className="py-20 px-4 md:px-10 bg-white">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 items-center">
           <div className="md:w-1/2">
-            <h2 className="text-3xl font-bold text-brand-blue mb-6">WHO WE ARE</h2>
-            <div className="space-y-4 text-gray-600 leading-relaxed">
+            <h2 className="text-3xl font-bold text-brand-blue mb-6 tracking-tight uppercase">WHO WE ARE</h2>
+            <div className="space-y-4 text-gray-600 leading-relaxed text-lg">
               <p>
-                Panum A.D. Structures is a leading construction and structural engineering firm committed to delivering top-quality building solutions. We handle residential and commercial projects from foundation to completion with a focus on quality, durability, and timely delivery.
+                <span className="font-bold text-brand-blue">Panum A.D. Structures</span> is a construction and structural engineering company that combines strength, precision, and innovative thinking to deliver durable and high-quality building solutions.
               </p>
               <p>
-                As a firm rooted in professionalism and precision, we bring a hands-on approach to every project, ensuring strict supervision, quality control, and adherence to engineering standards. Our team of experienced professionals ensures that every structure we build is not only highly functional but built to last.
+                We are a technical, engineering-driven firm focused on delivering excellence through rigorous quality control and professional integrity. Our expertise spans residential and commercial sectors, where we translate complex engineering concepts into reliable, life-long structures.
               </p>
             </div>
             <div className="mt-8 flex gap-6">
@@ -47,6 +47,43 @@ const About = () => {
         </div>
       </section>
 
+      {/* 2.5. The Brand Concept Section */}
+      <section className="py-20 px-4 md:px-10 bg-brand-blue text-white overflow-hidden relative">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-32 translate-x-32 blur-3xl"></div>
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4 tracking-tight uppercase">THE BRAND CONCEPT</h2>
+            <p className="text-blue-200 tracking-widest text-sm font-bold uppercase">Foundation | Strength | Innovation</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className="bg-white/10 p-10 rounded-lg backdrop-blur-sm border border-white/10 hover:border-brand-lightBlue transition duration-300">
+              <h3 className="text-3xl font-bold text-brand-lightBlue mb-6 border-b border-white/20 pb-4 uppercase tracking-wider">Panum</h3>
+              <p className="text-xl leading-relaxed">
+                Represents our core values: <span className="text-brand-lightBlue font-bold">Foundation, Core, Precision, and Stability.</span>
+              </p>
+              <p className="mt-4 text-gray-300">
+                A solid foundation is the bedrock of every great structure. We prioritize the fundamentals to ensure every project starts with absolute precision.
+              </p>
+            </div>
+            
+            <div className="bg-white/10 p-10 rounded-lg backdrop-blur-sm border border-white/10 hover:border-brand-lightBlue transition duration-300">
+              <h3 className="text-3xl font-bold text-brand-lightBlue mb-6 border-b border-white/20 pb-4 uppercase tracking-wider">A.D.</h3>
+              <div className="space-y-6">
+                <div>
+                  <h4 className="text-xl font-bold text-white uppercase tracking-wider mb-2 underline decoration-brand-lightBlue decoration-2 underline-offset-4">Adamantium</h4>
+                  <p className="text-gray-300">Strength, durability, and indestructibility. We build structures that stand the test of time and weather.</p>
+                </div>
+                <div>
+                  <h4 className="text-xl font-bold text-white uppercase tracking-wider mb-2 underline decoration-brand-lightBlue decoration-2 underline-offset-4">Divergent</h4>
+                  <p className="text-gray-300">Innovation, unique thinking, and modern solutions. We approach every challenge with a fresh perspective.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 3. Vision & Mission Section */}
       <section className="bg-gray-50 py-20 px-4 md:px-10">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -55,9 +92,9 @@ const About = () => {
             <div className="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-6">
               <Eye className="text-brand-lightBlue w-8 h-8" />
             </div>
-            <h3 className="text-2xl font-bold text-brand-blue mb-4">OUR VISION</h3>
+            <h3 className="text-2xl font-bold text-brand-blue mb-4 uppercase tracking-tight">OUR VISION</h3>
             <p className="text-gray-600 leading-relaxed">
-              To be a leading construction and structural engineering firm known for delivering durable, innovative, and high-quality projects that stand the test of time.
+              To be a leading construction and structural engineering firm known for delivering durable, innovative, and high-quality projects that stand the test of time and redefine excellence in the industry.
             </p>
           </div>
           {/* Mission */}
@@ -65,9 +102,9 @@ const About = () => {
             <div className="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-6">
               <Target className="text-brand-blue w-8 h-8" />
             </div>
-            <h3 className="text-2xl font-bold text-brand-blue mb-4">OUR MISSION</h3>
+            <h3 className="text-2xl font-bold text-brand-blue mb-4 uppercase tracking-tight">OUR MISSION</h3>
             <p className="text-gray-600 leading-relaxed">
-              To provide reliable construction, structural design, and maintenance solutions through professionalism, precision, and a commitment to excellence, ensuring client satisfaction at every stage of project delivery.
+              To provide reliable construction, structural design, and maintenance solutions through professionalism, precision, and a commitment to innovation, ensuring client satisfaction and structural integrity at every stage.
             </p>
           </div>
         </div>

@@ -112,9 +112,7 @@ const Navbar = () => {
               <Phone size={14} className="mr-2 text-brand-lightBlue" /> 08029617972
             </a>
             <a 
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=panumadstruct@gmail.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
+              href="mailto:panumadstruct@gmail.com" 
               className="flex items-center hover:text-brand-lightBlue transition"
             >
               <Mail size={14} className="mr-2 text-brand-lightBlue" /> panumadstruct@gmail.com

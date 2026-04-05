@@ -43,7 +43,7 @@ const Projects = () => {
 
   return (
     <div className="w-full overflow-x-hidden bg-gray-50">
-      <SEO title="Our Projects" description="Explore Panum A.D. Structures construction portfolio, including ongoing and completed structural developments." />
+      <SEO title="Our Projects" description="Explore our portfolio of structural engineering and construction projects. Panum A.D. Structures delivers durable and high-quality building solutions." />
       
       {/* 1. Page Hero Section */}
       <section className="relative h-[35vh] w-full bg-black text-white flex items-center justify-center">
