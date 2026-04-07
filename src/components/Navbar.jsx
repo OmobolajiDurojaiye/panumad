@@ -202,7 +202,7 @@ const Navbar = () => {
             >
               <ChevronLeft size={24} />
             </button>
-            <span className="text-gray-400 text-xs font-bold tracking-[0.3em] uppercase">Back</span>
+            <span className="text-gray-400 text-xs font-bold tracking-[0.3em] uppercase">Menu</span>
           </div>
 
           {/* Mobile Nav Links */}
@@ -231,11 +231,15 @@ const Navbar = () => {
                   TALK TO US
                </Link>
                <div className="mt-10 flex justify-center space-x-8 opacity-40">
-                  <Facebook size={20} />
-                  <a href="https://x.com/panum_adstruc" target="_blank" rel="noopener noreferrer">
-                    <Twitter size={20} />
+                  <a href="https://www.facebook.com/profile.php?id=61574938955462" target="_blank" rel="noopener noreferrer">
+                    <Facebook size={20} className="hover:text-brand-lightBlue transition" />
                   </a>
-                  <Instagram size={20} />
+                  <a href="https://x.com/panum_adstruc" target="_blank" rel="noopener noreferrer">
+                    <Twitter size={20} className="hover:text-brand-lightBlue transition" />
+                  </a>
+                  <a href="https://www.instagram.com/panum.a.d?igsh=MWFieTkxd2s0cWxiMg==" target="_blank" rel="noopener noreferrer">
+                    <Instagram size={20} className="hover:text-brand-lightBlue transition" />
+                  </a>
                </div>
             </div>
           </div>
