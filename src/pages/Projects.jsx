@@ -109,50 +109,47 @@ const Projects = () => {
           <p className="text-gray-500 text-lg font-light">Delivering diverse structural solutions</p>
         </div>
 
-        {/* Slanted Grid Container */}
-        <div className="w-full h-[500px] flex overflow-hidden bg-brand-blue relative">
-          {/* Background image across the whole section just in case */}
+        {/* Slanted Grid Container (Desktop) / Vertical Stack (Mobile) */}
+        <div className="w-full flex flex-col md:flex-row md:h-[500px] overflow-hidden bg-brand-blue relative">
+          {/* Background image across the whole section */}
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-20"></div>
 
           {housingStyles.map((style, index) => (
             <div 
               key={index}
-              className={`flex-1 h-full relative -skew-x-12 border-r-4 border-white overflow-hidden group 
+              className={`flex-1 min-h-[250px] md:h-full relative md:-skew-x-12 border-b-4 md:border-b-0 md:border-r-4 border-white overflow-hidden group 
                 ${style.bg} hover:bg-transparent transition-colors duration-500
-                ${index === 0 ? '-ml-10' : ''} ${index === housingStyles.length - 1 ? '-mr-10' : ''}
+                ${index === 0 ? 'md:-ml-10' : ''} ${index === housingStyles.length - 1 ? 'md:-mr-10' : ''}
               `}
             >
-              {/* Image that appears on hover */}
+              {/* Image that appears on hover or is visible on mobile for context */}
               {style.img && (
                 <div 
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 scale-125 object-cover"
+                  className="absolute inset-0 opacity-40 md:opacity-0 group-hover:opacity-100 transition-opacity duration-500 md:scale-125 object-cover"
                   style={{ backgroundImage: `url('${style.img}')`, backgroundSize: 'cover', backgroundPosition: 'center' }}
                 >
                   <div className="absolute inset-0 bg-brand-blue/60 mix-blend-multiply"></div>
                 </div>
               )}
 
-              {/* Default transparent overlay if needed */}
-              <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
+              {/* Default transparent overlay */}
+              <div className="absolute inset-0 bg-black/20 md:bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
 
-              {/* Undo Skew for Content inside */}
-              <div className="skew-x-12 w-full h-full flex flex-col items-center justify-center text-center p-6 relative z-10">
-                <h3 className="text-white font-bold text-xl md:text-2xl mb-2 drop-shadow-lg">{style.title}</h3>
+              {/* Undo Skew for Content inside (Desktop only) */}
+              <div className="md:skew-x-12 w-full h-full flex flex-col items-center justify-center text-center p-8 md:p-6 relative z-10">
+                <h3 className="text-white font-bold text-2xl md:text-xl lg:text-2xl mb-2 drop-shadow-xl uppercase tracking-tight">{style.title}</h3>
                 
                 {style.subtitle && (
-                  <p className="text-blue-100 text-sm mb-6 drop-shadow-md px-4">{style.subtitle}</p>
+                  <p className="text-blue-100 text-sm md:text-xs lg:text-sm mb-6 drop-shadow-md px-4 font-medium">{style.subtitle}</p>
                 )}
 
-                {style.hasTour && (
-                  <button className="bg-brand-lightBlue text-white font-bold px-6 py-2 mt-4 hover:bg-white hover:text-brand-lightBlue transition shadow-lg">
-                    VIRTUAL TOUR
-                  </button>
-                )}
-                
-                {style.hasMore && (
-                  <button className="bg-brand-lightBlue text-white font-bold px-6 py-2 mt-4 hover:bg-white hover:text-brand-lightBlue transition shadow-lg">
-                    SEE ALL SERVICES
-                  </button>
+                {(style.hasTour || style.hasMore) && (
+                  <Link 
+                    to={style.hasTour ? "/contact" : "/gallery"}
+                    className="bg-brand-lightBlue text-white font-bold px-8 md:px-4 lg:px-8 py-3 md:py-2 mt-2 hover:bg-white hover:text-brand-lightBlue transition shadow-xl text-sm md:text-[10px] lg:text-sm uppercase tracking-widest"
+                  >
+                    {style.hasTour ? 'Get in Touch' : 'View Gallery'}
+                  </Link>
                 )}
               </div>
             </div>

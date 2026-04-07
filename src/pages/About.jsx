@@ -17,7 +17,7 @@ const About = () => {
       </section>
 
       {/* 2. Who We Are Section */}
-      <section className="py-20 px-4 md:px-10 bg-white">
+      <section id="who-we-are" className="py-20 px-4 md:px-10 bg-white">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 items-center">
           <div className="md:w-1/2">
             <h2 className="text-3xl font-bold text-brand-blue mb-6 tracking-tight uppercase">WHO WE ARE</h2>
@@ -134,16 +134,13 @@ const About = () => {
       </section>
 
       {/* 5. CEO Message */}
-      <section className="py-20 px-4 md:px-10 bg-white">
+      <section id="ceo-message" className="py-20 px-4 md:px-10 bg-white">
         <div className="max-w-4xl mx-auto flex flex-col items-center text-center bg-gray-50 p-10 md:p-16 rounded shadow-sm border-t-4 border-brand-blue">
             <h2 className="text-3xl font-bold text-brand-blue mb-2 uppercase">Meet the CEO</h2>
             <div className="w-16 h-1 bg-brand-lightBlue mb-8"></div>
             <div className="space-y-6 text-gray-700 text-lg leading-relaxed md:px-8">
               <p>
-                "I am a professional builder and structural engineering designer with a strong passion for delivering safe, durable, and well-executed construction projects. As the CEO of Panum A.D. Structures, I bring a hands-on approach to every project, ensuring strict supervision, quality control, and adherence to engineering standards."
-              </p>
-              <p>
-                "With experience in both design and site execution, I am committed to building structures that are not only functional but built to last. My goal is to consistently deliver value, reliability, and excellence to every client."
+                "I am a professional builder and structural engineering designer with a strong passion for delivering safe, durable, and well-executed construction projects. As the CEO of Panum A.D. Structures, I bring a hands-on approach to every project, ensuring strict supervision, quality control, and adherence to engineering standards. With experience in both design and site execution, I am committed to building structures that are not only functional but built to last. My goal is to consistently deliver value, reliability, and excellence to every client."
               </p>
             </div>
         </div>

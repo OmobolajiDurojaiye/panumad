@@ -8,17 +8,17 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
           <h3 className="font-bold mb-4 text-lg hover:text-brand-lightBlue transition">
-            <Link to="/about">ABOUT US</Link>
+            <Link to="/about" reloadDocument>ABOUT US</Link>
           </h3>
           <ul className="space-y-2 text-gray-400">
-            <li><Link to="/about">Who We Are</Link></li>
-            <li><Link to="/about">CEO's Message</Link></li>
-            <li><Link to="/about">Our Team</Link></li>
+            <li><Link to="/about#who-we-are">Who We Are</Link></li>
+            <li><Link to="/about#ceo-message">CEO's Message</Link></li>
+            <li><Link to="/about#who-we-are">Our Team</Link></li>
           </ul>
         </div>
         <div>
           <h3 className="font-bold mb-4 text-lg hover:text-brand-lightBlue transition">
-            <Link to="/projects">OUR PROJECTS</Link>
+            <Link to="/projects" reloadDocument>OUR PROJECTS</Link>
           </h3>
           <ul className="space-y-2 text-gray-400">
             <li><Link to="/projects">Ongoing Projects</Link></li>
@@ -28,7 +28,7 @@ const Footer = () => {
         </div>
         <div className="md:col-span-2">
           <h3 className="font-bold mb-4 text-lg hover:text-brand-lightBlue transition">
-            <Link to="/contact">GET IN TOUCH</Link>
+            <Link to="/contact" reloadDocument>GET IN TOUCH</Link>
           </h3>
           <a 
             href="https://wa.me/message/DSMZ66AI5ZHFF1" 

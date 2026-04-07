@@ -98,8 +98,8 @@ const Navbar = () => {
       {/* 2. THE MAIN STATIC NAVBAR (Standard View) */}
       <header className="w-full relative z-50 bg-white">
         {/* Top Info Bar (Black) */}
-        <div className="bg-black text-white text-[10px] md:text-xs py-2.5 px-4 md:px-10 flex flex-col md:flex-row justify-between items-center tracking-wider">
-          <div className="flex items-center space-x-6">
+        <div className="hidden md:flex bg-black text-white text-[10px] md:text-xs py-2.5 px-4 md:px-10 flex-col md:flex-row justify-between items-center tracking-wider text-center md:text-left">
+          <div className="flex flex-col md:flex-row items-center md:space-x-6 space-y-2 md:space-y-0">
             <a 
               href="https://wa.me/message/DSMZ66AI5ZHFF1" 
               target="_blank" 
@@ -118,7 +118,7 @@ const Navbar = () => {
               <Mail size={14} className="mr-2 text-brand-lightBlue" /> panumadstruct@gmail.com
             </a>
           </div>
-          <div className="flex items-center space-x-5 mt-2 md:mt-0 opacity-60">
+          <div className="flex items-center space-x-5 mt-3 md:mt-0 opacity-60">
             <span className="mr-2 font-bold text-[9px] uppercase hidden lg:inline">Follow Our Engineering Journey:</span>
             <a href="https://www.facebook.com/profile.php?id=61574938955462" target="_blank" rel="noopener noreferrer">
               <Facebook size={16} className="hover:text-brand-lightBlue cursor-pointer transition" />
@@ -139,11 +139,11 @@ const Navbar = () => {
             <img 
               src="/panumadlogo-white.png" 
               alt="Panum Ad Logo" 
-              className="h-14 w-auto object-contain shadow-sm transform group-hover:-translate-y-1 transition-transform duration-300 rounded-sm" 
+              className="h-20 md:h-16 w-auto object-contain shadow-sm transform group-hover:-translate-y-1 transition-transform duration-300 rounded-sm" 
             />
-            <div className="ml-4 hidden md:block">
-              <span className="block font-black text-2xl md:text-3xl tracking-tighter text-brand-blue leading-none">PANUM A.D. STRUCTURES</span>
-              <span className="text-[10px] font-bold tracking-[0.3em] text-gray-400 uppercase leading-none mt-1 flex items-center">
+            <div className="ml-3 md:ml-4 hidden md:block">
+              <span className="block font-black text-xl md:text-3xl tracking-tighter text-brand-blue leading-none">PANUM A.D. STRUCTURES</span>
+              <span className="text-[8px] md:text-[10px] font-bold tracking-[0.3em] text-gray-400 uppercase leading-none mt-1 flex items-center">
                 <HardHat size={10} className="mr-1 text-brand-lightBlue" /> Construction & Engineering
               </span>
             </div>
