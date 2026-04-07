@@ -11,9 +11,9 @@ const Gallery = () => {
   // Gallery Data
   const images = [
     // New Videos (Prioritized)
-    { id: 101, type: 'video', category: 'Construction', title: 'Site Progress Update', src: '/project-images/more-images/2 (1).mp4', alt: 'On-site construction progress at Panum A.D. Structures' },
-    { id: 102, type: 'video', category: 'Field Work', title: 'Structural Inspection', src: '/project-images/more-images/2 (2).mp4', alt: 'Technical inspection of structural reinforcement' },
-    { id: 103, type: 'video', category: 'Construction', title: 'Building Development', src: '/project-images/more-images/2 (4).mp4', alt: 'Ongoing building development and site management' },
+    { id: 101, type: 'video', category: 'Design', title: 'Site Progress Update', src: '/project-images/more-images/2 (1).mp4', alt: 'On-site construction progress at Panum A.D. Structures' },
+    { id: 102, type: 'video', category: 'Design', title: 'Structural Inspection', src: '/project-images/more-images/2 (2).mp4', alt: 'Technical inspection of structural reinforcement' },
+    { id: 103, type: 'video', category: 'Design', title: 'Building Development', src: '/project-images/more-images/2 (4).mp4', alt: 'Ongoing building development and site management' },
 
     // Existing Assets (Updated with Alt Tags)
     { id: 1, type: 'image', category: 'Residential', title: 'Site Operations', src: '/project-images/1 (1).jpeg', alt: 'Panum A.D. construction site operations in Abuja' },
@@ -46,7 +46,7 @@ const Gallery = () => {
   ];
 
   // Filter logic
-  const categories = ['All', 'Residential', 'Commercial', 'Construction', 'Field Work'];
+  const categories = ['All', 'Design', 'Residential', 'Commercial', 'Construction', 'Field Work'];
   const filteredImages = filter === 'All' ? images : images.filter(img => img.category === filter);
 
   // Slideshow Logic
