@@ -57,26 +57,26 @@ const About = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="bg-white/10 p-10 rounded-lg backdrop-blur-sm border border-white/10 hover:border-brand-lightBlue transition duration-300">
-              <h3 className="text-3xl font-bold text-brand-lightBlue mb-6 border-b border-white/20 pb-4 uppercase tracking-wider">Panum</h3>
-              <p className="text-xl leading-relaxed">
-                Represents our core values: <span className="text-brand-lightBlue font-bold">Foundation, Core, Precision, and Stability.</span>
+            <div className="bg-white/15 p-10 rounded-lg backdrop-blur-sm border border-white/10 hover:border-brand-lightBlue transition duration-300">
+              <h3 className="text-3xl font-bold text-blue-200 mb-6 border-b border-white/20 pb-4 uppercase tracking-wider">Panum</h3>
+              <p className="text-xl leading-relaxed text-white">
+                Represents our core values: <span className="text-blue-200 font-bold">Foundation, Core, Precision, and Stability.</span>
               </p>
-              <p className="mt-4 text-gray-300">
+              <p className="mt-4 text-blue-50">
                 A solid foundation is the bedrock of every great structure. We prioritize the fundamentals to ensure every project starts with absolute precision.
               </p>
             </div>
             
-            <div className="bg-white/10 p-10 rounded-lg backdrop-blur-sm border border-white/10 hover:border-brand-lightBlue transition duration-300">
-              <h3 className="text-3xl font-bold text-brand-lightBlue mb-6 border-b border-white/20 pb-4 uppercase tracking-wider">A.D.</h3>
+            <div className="bg-white/15 p-10 rounded-lg backdrop-blur-sm border border-white/10 hover:border-brand-lightBlue transition duration-300">
+              <h3 className="text-3xl font-bold text-blue-200 mb-6 border-b border-white/20 pb-4 uppercase tracking-wider">A.D.</h3>
               <div className="space-y-6">
                 <div>
-                  <h4 className="text-xl font-bold text-white uppercase tracking-wider mb-2 underline decoration-brand-lightBlue decoration-2 underline-offset-4">Adamantium</h4>
-                  <p className="text-gray-300">Strength, durability, and indestructibility. We build structures that stand the test of time and weather.</p>
+                  <h4 className="text-xl font-bold text-white uppercase tracking-wider mb-2 underline decoration-blue-400 decoration-2 underline-offset-4">Adamantium</h4>
+                  <p className="text-blue-50">Strength, durability, and indestructibility. We build structures that stand the test of time and weather.</p>
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-white uppercase tracking-wider mb-2 underline decoration-brand-lightBlue decoration-2 underline-offset-4">Divergent</h4>
-                  <p className="text-gray-300">Innovation, unique thinking, and modern solutions. We approach every challenge with a fresh perspective.</p>
+                  <h4 className="text-xl font-bold text-white uppercase tracking-wider mb-2 underline decoration-blue-400 decoration-2 underline-offset-4">Divergent</h4>
+                  <p className="text-blue-50">Innovation, unique thinking, and modern solutions. We approach every challenge with a fresh perspective.</p>
                 </div>
               </div>
             </div>
