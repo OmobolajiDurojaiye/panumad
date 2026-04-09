@@ -141,10 +141,10 @@ const Navbar = () => {
             <img 
               src="/panumadlogo-white.png" 
               alt="Panum Ad Logo" 
-              className="h-14 sm:h-16 w-auto object-contain shadow-sm transform group-hover:-translate-y-1 transition-transform duration-300 rounded-sm" 
+              className="h-10 md:h-14 lg:h-16 w-auto object-contain shadow-sm transform group-hover:-translate-y-1 transition-transform duration-300 rounded-sm" 
             />
-            <div className="ml-2 sm:ml-3 md:ml-4 block">
-              <span className="block font-black text-base sm:text-xl md:text-3xl tracking-tighter text-brand-blue leading-none">PANUM A.D. STRUCTURES</span>
+            <div className="ml-2 md:ml-4 block">
+              <span className="block font-black text-sm sm:text-lg md:text-3xl tracking-tighter text-brand-blue leading-none mt-1 sm:mt-0">PANUM A.D. STRUCTURES</span>
             </div>
           </Link>
 
