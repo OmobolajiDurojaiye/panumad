@@ -141,13 +141,10 @@ const Navbar = () => {
             <img 
               src="/panumadlogo-white.png" 
               alt="Panum Ad Logo" 
-              className="h-20 md:h-16 w-auto object-contain shadow-sm transform group-hover:-translate-y-1 transition-transform duration-300 rounded-sm" 
+              className="h-14 sm:h-16 w-auto object-contain shadow-sm transform group-hover:-translate-y-1 transition-transform duration-300 rounded-sm" 
             />
-            <div className="ml-3 md:ml-4 hidden md:block">
-              <span className="block font-black text-xl md:text-3xl tracking-tighter text-brand-blue leading-none">PANUM A.D. STRUCTURES</span>
-              <span className="text-[8px] md:text-[10px] font-bold tracking-[0.3em] text-gray-400 uppercase leading-none mt-1 flex items-center">
-                <HardHat size={10} className="mr-1 text-brand-lightBlue" /> Construction & Engineering
-              </span>
+            <div className="ml-2 sm:ml-3 md:ml-4 block">
+              <span className="block font-black text-base sm:text-xl md:text-3xl tracking-tighter text-brand-blue leading-none">PANUM A.D. STRUCTURES</span>
             </div>
           </Link>
 
