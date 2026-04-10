@@ -24,7 +24,7 @@ export default defineConfig({
       routes: ['/', '/about', '/projects', '/gallery', '/contact'],
       renderer: new PuppeteerRenderer({
         headless: true,
-        args: ['--no-sandbox', '--disable-setuid-sandbox'],
+        args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage', '--single-process'],
         executablePath: executablePath
       })
     }),
