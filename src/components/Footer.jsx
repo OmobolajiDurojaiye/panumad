@@ -56,7 +56,7 @@ const Footer = () => {
       
       <div className="max-w-7xl mx-auto border-t border-brand-blue mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-400">
         <p className="hover:text-white transition cursor-pointer">
-          <Link to="/">© 2026 Panum A.D. Structures. All rights reserved.</Link>
+          <Link to="/">© 2026 Panum A.D. Structures (Rc. 9473228). All rights reserved.</Link>
         </p>
         <div className="flex space-x-4 mt-4 md:mt-0 items-center">
           <span>GET SOCIAL</span>
