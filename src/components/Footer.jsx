@@ -55,10 +55,15 @@ const Footer = () => {
       </div>
       
       <div className="max-w-7xl mx-auto border-t border-brand-blue mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-400">
-        <p className="hover:text-white transition cursor-pointer">
-          <Link to="/">© 2026 Panum A.D. Structures (Rc. 9473228). All rights reserved.</Link>
-        </p>
-        <div className="flex space-x-4 mt-4 md:mt-0 items-center">
+        <div className="flex flex-col items-center md:items-start">
+          <p className="hover:text-white transition cursor-pointer text-center md:text-left">
+            <Link to="/">© 2026 Panum A.D. Structures (Rc. 9473228). All rights reserved.</Link>
+          </p>
+          <p className="mt-2 text-center md:text-left">
+            Made by <a href="https://www.bolaji.tech/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition font-medium">Bolaji</a>
+          </p>
+        </div>
+        <div className="flex space-x-4 mt-6 md:mt-0 items-center">
           <span>GET SOCIAL</span>
           <a href="https://www.facebook.com/profile.php?id=61574938955462" target="_blank" rel="noopener noreferrer">
             <Facebook className="hover:text-white transition cursor-pointer" size={20} />
