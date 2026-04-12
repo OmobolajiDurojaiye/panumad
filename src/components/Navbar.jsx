@@ -67,7 +67,10 @@ const Navbar = () => {
               alt="Panum Ad Logo" 
               className="h-10 w-auto object-contain transform group-hover:rotate-12 transition-transform rounded-sm" 
             />
-            <span className="ml-3 font-bold text-lg text-white tracking-tight uppercase">Panum A.D. <span className="text-brand-lightBlue font-light">Structures</span></span>
+            <div className="flex flex-col ml-3">
+              <span className="font-bold text-lg text-white tracking-tight uppercase leading-none">Panum A.D. <span className="text-brand-lightBlue font-light">Structures</span></span>
+              <span className="text-[7px] text-gray-400 font-bold tracking-[0.2em] mt-0.5">RC. 9473228</span>
+            </div>
           </Link>
 
           {/* Nav Links */}
@@ -143,8 +146,9 @@ const Navbar = () => {
               alt="Panum Ad Logo" 
               className="h-10 md:h-14 lg:h-16 w-auto object-contain shadow-sm transform group-hover:-translate-y-1 transition-transform duration-300 rounded-sm" 
             />
-            <div className="ml-2 md:ml-4 block">
+            <div className="ml-2 md:ml-4 flex flex-col justify-center">
               <span className="block font-black text-sm sm:text-lg md:text-3xl tracking-tighter text-brand-blue leading-none mt-1 sm:mt-0">PANUM A.D. STRUCTURES</span>
+              <span className="block text-[8px] md:text-[10px] font-bold text-gray-400 tracking-[0.3em] mt-0.5 ml-0.5">RC. 9473228</span>
             </div>
           </Link>
 
