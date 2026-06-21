@@ -18,28 +18,63 @@ import SEO from '../components/SEO';
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Carousel Data - Targeted at Construction & Civil Engineering
+  // Carousel Data - Real On-Site Construction & Civil Engineering Images
   const slides = [
     {
-      title: "STRUCTURAL ENGINEERING EXCELLENCE",
-      subtitle: "LEADING CONSTRUCTION & DESIGN FIRM",
-      image: "https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&w=2070",
-      btnText: "OUR SERVICES",
-      link: "/about"
-    },
-    {
-      title: "RELIABLE CONSTRUCTION SOLUTIONS",
-      subtitle: "BUILT ON PROFESSIONALISM & PRECISION",
-      image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=2000",
-      btnText: "EXPLORE PROJECTS",
+      title: "PRECISION ON-SITE SUPERVISION",
+      subtitle: "ENSURING EXCELLENCE AT EVERY CONSTRUCTION PHASE",
+      image: "/hero-caousel/WhatsApp Image 2026-06-20 at 20.28.23.jpeg",
+      btnText: "OUR PROJECTS",
       link: "/projects"
     },
     {
-      title: "DURABLE & INNOVATIVE DESIGNS",
-      subtitle: "BUILDING STRUCTURES THAT STAND THE TEST OF TIME",
-      image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000",
+      title: "STRUCTURAL INTEGRITY FIRST",
+      subtitle: "BUILDING WITH WORLD-CLASS ENGINEERING STANDARDS",
+      image: "/hero-caousel/WhatsApp Image 2026-06-20 at 20.28.38.jpeg",
+      btnText: "LEARN MORE",
+      link: "/about"
+    },
+    {
+      title: "EXPERT PROJECT MANAGEMENT",
+      subtitle: "DELIVERING COMPLEX STRUCTURES ON TIME & ON BUDGET",
+      image: "/hero-caousel/WhatsApp Image 2026-06-20 at 20.28.42.jpeg",
       btnText: "CONTACT US",
       link: "/contact"
+    },
+    {
+      title: "REINFORCED FOR STRENGTH",
+      subtitle: "HIGH-QUALITY MATERIALS & VIGOROUS TESTING",
+      image: "/hero-caousel/WhatsApp Image 2026-06-20 at 20.51.05.jpeg",
+      btnText: "EXPLORE SERVICES",
+      link: "/about"
+    },
+    {
+      title: "CIVIL ENGINEERING INNOVATION",
+      subtitle: "DURABLE SOLUTIONS FOR MODERN INFRASTRUCTURE",
+      image: "/hero-caousel/WhatsApp Image 2026-06-20 at 20.51.10.jpeg",
+      btnText: "OUR WORK",
+      link: "/projects"
+    },
+    {
+      title: "CRAFTING LUXURY DUPLEXES",
+      subtitle: "PREMIUM RESIDENTIAL BUILDINGS FROM FOUNDATION TO FINISH",
+      image: "/hero-caousel/WhatsApp Image 2026-06-20 at 20.53.06.jpeg",
+      btnText: "GET IN TOUCH",
+      link: "/contact"
+    },
+    {
+      title: "HANDS-ON LEADERSHIP",
+      subtitle: "DIRECT OVERSIGHT TO ASSURE QUALITY CONTROL",
+      image: "/hero-caousel/WhatsApp Image 2026-06-20 at 20.53.14.jpeg",
+      btnText: "OUR VALUES",
+      link: "/about"
+    },
+    {
+      title: "BUILDING THE FUTURE",
+      subtitle: "CREATING DURABLE STRUCTURES THAT STAND THE TEST OF TIME",
+      image: "/hero-caousel/WhatsApp Image 2026-06-20 at 20.53.19.jpeg",
+      btnText: "VIEW PROJECTS",
+      link: "/projects"
     }
   ];
 
@@ -72,32 +107,58 @@ const Home = () => {
               index === currentSlide ? 'opacity-100 scale-100' : 'opacity-0 scale-105 pointer-events-none'
             }`}
           >
-            {/* Ken Burns Background Effect */}
+            {/* Ambient Blurred Background (visible only on desktop/landscape for depth) */}
             <div 
-              className="absolute inset-0 bg-cover bg-center transition-transform duration-[6000ms] ease-linear"
+              className="absolute inset-0 bg-cover bg-center transition-transform duration-[6000ms] ease-linear filter blur-2xl opacity-30 scale-110 hidden md:block"
               style={{ 
-                backgroundImage: `url(${slide.image})`, 
+                backgroundImage: `url("${slide.image}")`, 
                 transform: index === currentSlide ? 'scale(1.15)' : 'scale(1)' 
               }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent"></div>
-            </div>
+            />
 
-            {/* Slide Text Content */}
-            <div className="relative h-full flex items-center px-6 md:px-20">
-              <div className={`max-w-4xl transition-all duration-1000 delay-300 ${index === currentSlide ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
-                <h1 className="text-4xl md:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-2xl">
+            {/* Sharp Background (visible on mobile where portrait aspect ratio naturally fits portrait screen) */}
+            <div 
+              className="absolute inset-0 bg-cover bg-center transition-transform duration-[6000ms] ease-linear md:hidden"
+              style={{ 
+                backgroundImage: `url("${slide.image}")`, 
+                transform: index === currentSlide ? 'scale(1.15)' : 'scale(1)' 
+              }}
+            />
+
+            {/* Dark Overlay for readability and atmosphere */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/85 md:via-black/75 to-black/90 z-10" />
+
+            {/* Slide Content: Split layout on desktop, vertically centered layout on mobile */}
+            <div className="relative z-20 h-full max-w-7xl mx-auto px-6 md:px-20 flex flex-col md:flex-row items-center justify-center md:justify-between gap-8 md:gap-16 py-12 md:py-0">
+              
+              {/* Left Column: Text & CTA */}
+              <div className={`w-full md:w-1/2 flex flex-col justify-center items-start text-left transition-all duration-1000 delay-300 ${index === currentSlide ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-2xl">
                   {slide.title}
                 </h1>
-                <p className="text-lg md:text-2xl text-brand-lightBlue font-bold tracking-[0.2em] uppercase mb-10 drop-shadow-md">
+                <p className="text-sm sm:text-base md:text-lg text-brand-lightBlue font-bold tracking-[0.2em] uppercase mb-8 drop-shadow-md">
                   {slide.subtitle}
                 </p>
-                <Link to={slide.link} className="inline-flex group relative overflow-hidden bg-brand-lightBlue hover:bg-blue-600 text-white px-10 py-5 font-bold transition items-center shadow-2xl w-max">
-                  <span className="relative z-10 uppercase tracking-widest">{slide.btnText}</span>
-                  <ArrowRight className="ml-3 relative z-10 group-hover:translate-x-2 transition-transform" size={20} />
+                <Link to={slide.link} className="inline-flex group relative overflow-hidden bg-brand-lightBlue hover:bg-blue-600 text-white px-8 py-4 font-bold transition items-center shadow-2xl w-max">
+                  <span className="relative z-10 uppercase tracking-widest text-sm">{slide.btnText}</span>
+                  <ArrowRight className="ml-3 relative z-10 group-hover:translate-x-2 transition-transform" size={18} />
                   <div className="absolute inset-0 bg-white/20 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
                 </Link>
               </div>
+
+              {/* Right Column: Sharp Portrait Image Frame (visible only on desktop) */}
+              <div className={`hidden md:flex md:w-[42%] h-[65vh] items-center justify-center transition-all duration-1000 delay-500 ${index === currentSlide ? 'scale-100 opacity-100' : 'scale-90 opacity-0'}`}>
+                <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.6)] border border-white/10 group/img">
+                  <img 
+                    src={slide.image} 
+                    alt={slide.title} 
+                    className="w-full h-full object-cover transition-transform duration-[6000ms] ease-out group-hover/img:scale-110"
+                  />
+                  {/* Subtle vignette on the image frame */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+                </div>
+              </div>
+
             </div>
           </div>
         ))}
